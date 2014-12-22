@@ -1,0 +1,11 @@
+{
+  "name": "jackandthegiant",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "modernizr": "~2.8.2",
+    "skrollr": "~0.6.29",
+    "greensock": "~1.14.2",
+    "Snap.svg": "git://github.com/adobe-webplatform/Snap.svg.git#~0.3.0"
+  }
+}

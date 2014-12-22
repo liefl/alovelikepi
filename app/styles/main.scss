@@ -1,0 +1,82 @@
+// bower:scss
+// endbower
+
+body {
+
+  background: #1f2f42;
+  margin: 0;
+  padding: 0;
+
+}
+
+#jackandthegiant {
+
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 3000px; height: 2000px;
+  margin: -1000px 0 0 -1500px;
+  display: block;
+
+
+}
+
+#audio-player {
+
+  position: fixed;
+  bottom: 20px; left: 20px;
+  width: 250px; height: 66px;
+  perspective: 1000px;
+  color: #FFF;
+
+  .audio-player-embed {
+
+    position: absolute;
+    width: 100%; height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    transform: translate3d(0px,70px,0) rotateX(-90deg);
+
+  }
+
+  .audio-player-open {
+
+    position: absolute;
+    bottom: 0; left: 0;
+    transition: all 0.5s 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  }
+
+  &.open {
+
+    .audio-player-embed {
+
+      opacity: 1;
+      pointer-events: all;
+      transition-delay: 0.2s;
+      transform: rotateX(0deg) rotateY(0deg) scale(1) translate3d(0,0,0);
+
+    }
+
+    .audio-player-open {
+
+      opacity: 0;
+
+      transition-delay: 0s;
+      transform: translate3d(0px,-30px,0);
+      
+    }
+
+  }
+
+}
+
+.clouds {
+  pointer-events: none;
+}
+
+.stars circle {
+  cursor: pointer;
+}
+
+
