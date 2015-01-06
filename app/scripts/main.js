@@ -4,15 +4,14 @@ $(document).ready(function () {
 
 function createJackAndTheGiant () {
 
-  var s = Snap('#jackandthegiant');
+  var s = Snap('#jackandthegiantsvg');
+  var $container = $('#jackandthegiant');
+
   var globals = {
     status: 'center',
+    shows: null,
     width: 3000,
-    height: 2000,
-    clouds: {
-      height: 2000,
-      initY: 1600
-    }
+    height: 2000
   };
 
   var assets = [
@@ -20,7 +19,13 @@ function createJackAndTheGiant () {
       name: 'mountains',
       path: 'images/mountains.svg',
       xPos: 0,
-      yPos: 800
+      yPos: 750
+    },
+    {
+      name: 'mountains2',
+      path: 'images/mountains-2.svg',
+      xPos: 0,
+      yPos: 420
     },
     {
       name: 'stars',
@@ -31,7 +36,7 @@ function createJackAndTheGiant () {
     {
       name: 'giant',
       path: 'images/giant.svg',
-      xPos: 1400,
+      xPos: 1250,
       yPos: 680
     },
     {
@@ -39,9 +44,56 @@ function createJackAndTheGiant () {
       path: 'images/cliff.svg',
       xPos: -700,
       yPos: 1000
+    },
+    {
+      name: 'jack',
+      path: 'images/jack.svg',
+      xPos: 1260,
+      yPos: 995
+    },
+    {
+      name: 'cloud1',
+      path: 'images/cloud-1.svg',
+      xPos: 0,
+      yPos: 0
+    },
+    {
+      name: 'cloud2',
+      path: 'images/cloud-2.svg',
+      xPos: 0,
+      yPos: 75
+    },
+    {
+      name: 'cloud3',
+      path: 'images/cloud-3.svg',
+      xPos: 0,
+      yPos: 160
+    },
+    {
+      name: 'cloud4',
+      path: 'images/cloud-4.svg',
+      xPos: 0,
+      yPos: 225
+    },
+    {
+      name: 'cloud5',
+      path: 'images/cloud-5.svg',
+      xPos: 0,
+      yPos: 280
+    },
+    {
+      name: 'cloud6',
+      path: 'images/cloud-6.svg',
+      xPos: 0,
+      yPos: 350
+    },
+    {
+      name: 'map',
+      path: 'images/map.svg',
+      xPos: 1010,
+      yPos: 450
     }
   ];
-
 
   var elements = {}; // we can store elements here for later use
 
@@ -76,220 +128,104 @@ function createJackAndTheGiant () {
 
   function onAssetsLoadComplete() {
 
-    
+    // controlling depth
 
     s.append(elements['stars']);
-    drawStars();
-    buildClouds();
+    s.append(elements['cloud1']);
+    s.append(elements['cloud2']);
+    s.append(elements['cloud3']);
+    s.append(elements['cloud4']);
+    s.append(elements['cloud5']);
     s.append(elements['giant']);
+    s.append(elements['cloud6']);
+    s.append(elements['mountains2']);
     s.append(elements['mountains']);
     s.append(elements['cliff']);
+    elements['stars'].append(elements['map']);
+    elements['cliff'].append(elements['jack']);
 
-    addListeners();
+    // special elements
 
-  }
+    buildScarf();
 
-  function addListeners() {
+    // listeners
 
-    $(elements['giant'].node).on('click', function() {
-      lookAtGiant(3);
-    });
-  }
+    attachListeners();
 
-  function drawStars() {
-
-    // $('.stars').on('mouseenter', function(e) {
-    //   TweenMax.to(e.target, 1, {
-    //     scale: 2,
-    //     transformOrigin: '50% 50%'
-    //   });
-    // });
-
-
-
-    // var stars = '';
-
-    // for(var i=0; i < 500; i++) {
-
-    //     var x = Math.random();
-    //     var y = Math.random();
-    //     var opacity = Math.random() * (1 - y) + 0.1;
-    //     var size = Math.random() * 3 * (1 - y);
-    //     var dur = Math.random() * 10 + 3;
-    //     var delay = Math.random() * 1;
-
-    //     stars += '<circle cx="' + x * 100 + '%"' + ' cy="' + y * 100 + '%" r="' + size + '">';
-    //     stars += ' <animate attributeName="fill-opacity"  values="' + opacity + '; 0.1; 0.4; 0.3; 0.5; 0.7; 0.3; 0.5; 0.8; ' + opacity + ';"  dur="' + dur + 's" repeatCount="indefinite"/>';
-    //     stars += '</circle>';
-    // }
-
-    // $('#stars').html(stars);
+  //animateTraceStars();
+  //buildPathCSS($('.map').find('.outline').find('path'));
+  //mapPathToCircles($('.outline').find('path'));
+  //mapTourHeader();
 
   }
 
-  function speechBubble(text) {
+  function attachListeners() {
 
-    var text = s.text(1400, 1000,  text);
-    elements['cliff'].append(text);
+    elements['giant'].select('.heart').click(lookInHeart);
   }
 
-  function buildClouds() {
-
-    var cloudData = [
-      {
-        path: 'M0,2.4h3.8C57,2.4,33.3,0,109.2,0l2.6,0v4H0V2.4z',
-        color: '#223448',
-        y: 1000,
-        animation: {
-          duration: 6,
-          targetX: 99,
-          initScaleX: 1.2,
-          initScaleY: 1.2,
-          targetScaleX: 1,
-          targetScaleY: 2.5
-        }
-      },
-      {
-        path: 'M0,2.4h3.8C57,2.4,33.3,0,109.2,0l2.6,0v4H0V2.4z',
-        color: '#274455',
-        y: 1075,
-        animation: {
-          duration: 5,
-          targetX: 99,
-          initScaleX: 1.5,
-          initScaleY: 1.5,
-          targetScaleX: 1,
-          targetScaleY: 2.5
-        }
-      },
-      {
-        path: 'M97.5,0C63.8,0,59.8,0.5,48.4,1.3C39.5,2,30.4,2.9,0,2.9v2.9h97.5V0z',
-        color: '#4fb98f',
-        y: 1150,
-        animation: {
-          duration: 3,
-          targetX: 99,
-          initScaleX: 1.8,
-          initScaleY: 1.8,
-          targetScaleX: 1,
-          targetScaleY: 2
-        }
-      },
-      {
-        path: 'M0,2.4V1.7c8.6-0.4,16.2-1.2,23.2-1.5c8.2-0.4,10.3,0.2,11.5,0.6c1.3,0.5,3.1,0.3,5.7,0.1c8.2-0.6,11.2,0.7,7.8,1.6H0z',
-        color: '#9beea6',
-        y: 1225,
-        animation: {
-          duration: 2,
-          targetX: 90,
-          initScaleX: 2,
-          initScaleY: 2,
-          targetScaleX: 1.25,
-          targetScaleY: 2
-        }
-      },
-      {
-        path: 'M0,2.4h3.8C57,2.4,33.3,0,109.2,0l2.6,0v4H0V2.4z',
-        color: '#f0ffb4',
-        y: 1280,
-        animation: {
-          duration: 1,
-          targetX: 99,
-          initScaleX: 1,
-          initScaleY: 1,
-          targetScaleX: 2,
-          targetScaleY: 2.5
-        }
-      }
-    ];
-
-    for(var i=0; i < cloudData.length; i++) {
-
-      var data = cloudData[i];
-
-      var container = s.group().addClass('clouds clouds-' + i).attr({
-        fill: data.color
-      });
-
-      var g1 = s.group().addClass('clouds-section').transform(new Snap.Matrix().translate(globals.width / 2 - 200, data.y));
-      var cloud = g1.group().append(s.path(data.path)).addClass('cloud');
-
-      for(var j=0; j < 8; j++) {
-        cloud.clone();
-      }
-
-      container.append(g1);
-
-      var g2 = g1.clone().transform(new Snap.Matrix().translate(globals.width / 2 + 200, data.y).scale(-1,1));
-
-      s.rect(0, data.y - 4, '100%', 400).appendTo(container); // extend bottom
-      s.append(container);
-
-      elements['clouds' + i] = container;
-
-      // POSITION & ANIMATE CLOUDS //
-
-      $(container.node).find('.clouds-section').each(function() {
-
-        var xPos = 0;
-        var scaleX = data.animation.initScaleX;
-        var scaleY = data.animation.initScaleY;
-
-        $(this).find('.cloud').each(function(idx, el) {
-
-          if(idx === 0) {
-
-            // scale first cloud up from nothing
-
-            TweenMax.to(el, 0, {
-              scaleX: data.animation.initScaleX,
-              scaleY: 0,
-              x: '-100%',
-              transformOrigin:"0% 100%"
-            });
-
-            TweenMax.to(el, data.animation.duration, {
-              scaleX: data.animation.initScaleX,
-              scaleY: data.animation.initScaleY,
-              x:  '0%',
-              ease: Linear.easeNone,
-              repeat: -1
-            });
-
-
-        } else {
-
-            TweenMax.to(el, 0, {
-              scaleX: scaleX,
-              scaleY: scaleY,
-              x: xPos + '%',
-              transformOrigin:"0% 100%"
-            });
-
-            xPos += data.animation.targetX * scaleX;
-            scaleX = data.animation.targetScaleX * scaleX;
-            scaleY = data.animation.targetScaleY * scaleY;
-
-            TweenMax.to(el, data.animation.duration, {
-              scaleX: scaleX,
-              scaleY: scaleY,
-              x: xPos + '%',
-              ease: Linear.easeNone,
-              repeat: -1
-            });
-
-          }
 
 
 
-        });
-      });
-
-    }
-
-  }
+  
 
   loadExternalAssets();
+
+  function lookInHeart() {
+
+    var duration = 3;
+
+    TweenMax.to(elements['cliff'].node, duration, {
+      x: -2100,
+      y: 100,
+      scale: 2,
+    });
+
+    TweenMax.to(elements['mountains'].node, duration, {
+      y: 1000,
+      x: 200,
+      scale: 1.8,
+      transformOrigin: '50% 50%'
+    });
+
+    TweenMax.to(elements['mountains2'].node, duration, {
+      y: 1000,
+      x: 200,
+      scale: 1.8,
+      transformOrigin: '50% 50%'
+    });
+
+    TweenMax.to(elements['giant'].node, duration, {
+      y: -13050,
+      x: -9500,
+      scale: 80
+    });
+
+    TweenMax.to(elements['cloud6'].node, duration, {
+      y: 3000
+    });
+
+    TweenMax.to(elements['cloud5'].node, duration, {
+      y: 300
+    });
+
+    TweenMax.to(elements['cloud4'].node, duration, {
+      y: 150
+    });
+
+    TweenMax.to(elements['cloud3'].node, duration, {
+      y: -0
+    });
+
+    TweenMax.to(elements['cloud2'].node, duration, {
+      y: -150
+    });
+
+    TweenMax.to(elements['cloud1'].node, duration, {
+      y: -250
+    });
+
+  }
 
   
 
@@ -339,42 +275,49 @@ function createJackAndTheGiant () {
     globals.status = 'right';
 
     TweenMax.to(elements['cliff'].node, duration, {
-      x: -700,
-      scale: 1.4
+      x: -2000,
+      scale: 2
     });
 
     TweenMax.to(elements['mountains'].node, duration, {
       x: -400,
-      scale: 1.05
+      scale: 2
     });
 
     TweenMax.to(elements['giant'].node, duration, {
-      x: 600,
-      scale: 0.95
+      x: 0,
+      y: -900,
+      scale: 4
     });
 
     TweenMax.to(elements['clouds4'].node, duration, {
-      x: 100
+      x: 100,
+      y: -50
     });
 
     TweenMax.to(elements['clouds3'].node, duration, {
-      x: 150
+      x: 150,
+      y: -75
     });
 
     TweenMax.to(elements['clouds2'].node, duration, {
-      x: 200
+      x: 200,
+      y: -100
     });
 
     TweenMax.to(elements['clouds1'].node, duration, {
-      x: 250
+      x: 250,
+      y: -125
     });
 
     TweenMax.to(elements['clouds0'].node, duration, {
-      x: 200
+      x: 200,
+      y: -150
     });
 
     TweenMax.to(elements['stars'].node, duration, {
-      x: 100
+      x: 100,
+      y: -20
     });
 
   }
@@ -383,85 +326,248 @@ function createJackAndTheGiant () {
 
     globals.status = 'left';
 
-    TweenMax.to($('.cliff'), 2, {
-      x: -200,
-      scale: 1.2
+    TweenMax.to(elements['cliff'].node, duration, {
+      x: -2100,
+      y: 100,
+      scale: 2,
+      onComplete: function() {
+        $container.addClass('dialogue');
+      }
     });
 
-    TweenMax.to($('.mountains'), 2, {
-      x: 300
+    TweenMax.to(elements['mountains'].node, duration, {
+      y: 400,
+      x: 200,
+      scale: 1.8,
+      transformOrigin: '50% 50%'
     });
 
-    TweenMax.to($('.giant'), 2, {
-      x: 00,
-      scale: 0.9
+    TweenMax.to(elements['giant'].node, duration, {
+      y: 100,
+      x: 0,
+      scale: 1.4,
+      transformOrigin: '50% 100%'
     });
 
-    TweenMax.to($('.clouds-4'), 2, {
-      x: -100
+    TweenMax.to(elements['cloud5'].node, duration, {
+      y: 100
     });
 
-    TweenMax.to($('.clouds-3'), 2, {
-      x: -150
+    TweenMax.to(elements['cloud4'].node, duration, {
+      y: 0
     });
 
-    TweenMax.to($('.clouds-2'), 2, {
-      x: -250
+    TweenMax.to(elements['cloud3'].node, duration, {
+      y: -50
     });
 
-    TweenMax.to($('.clouds-1'), 2, {
-      x: -350
+    TweenMax.to(elements['cloud2'].node, duration, {
+      y: -75
     });
 
-    TweenMax.to($('.clouds-0'), 2, {
-      x: -450
+    TweenMax.to(elements['cloud1'].node, duration, {
+      y: -125
     });
-
-    TweenMax.to($('.stars'), 2, {
-      x: -50
-    });
+    
 
   }
 
   function lookUp(duration) {
 
     globals.status = 'up';
+    initShows();
 
     TweenMax.to(elements['cliff'].node, duration, {
-      y: 800
+      y: 1100
     });
 
     TweenMax.to(elements['mountains'].node, duration, {
-      y: 700
+      y: 850
+    });
+
+    TweenMax.to(elements['mountains2'].node, duration, {
+      y: 800
     });
 
     TweenMax.to(elements['giant'].node, duration, {
-      y: 700
+      y: 850
     });
 
-    TweenMax.to(elements['clouds4'].node, duration, {
-      y: 700
+    TweenMax.to(elements['cloud6'].node, duration, {
+      y: 950
     });
 
-    TweenMax.to(elements['clouds3'].node, duration, {
-      y: 600
+    TweenMax.to(elements['cloud5'].node, duration, {
+      y: 850
     });
 
-    TweenMax.to(elements['clouds2'].node, duration, {
-      y: 500
+    TweenMax.to(elements['cloud4'].node, duration, {
+      y: 750
     });
 
-    TweenMax.to(elements['clouds1'].node, duration, {
-      y: 400
+    TweenMax.to(elements['cloud3'].node, duration, {
+      y: 650
     });
 
-    TweenMax.to(elements['clouds0'].node, duration, {
-      y: 300
+    TweenMax.to(elements['cloud2'].node, duration, {
+      y: 550
+    });
+
+    TweenMax.to(elements['cloud1'].node, duration, {
+      y: 450
     });
 
     TweenMax.to(elements['stars'].node, duration, {
-      y: 100
+      y: 250
     });
+
+
+
+  }
+
+  function initShows() {
+
+    $container.addClass('shows');
+
+    if(!globals.shows) {
+      loadShows();
+    } else {
+      displayShows();
+    }
+
+  }
+
+  function loadShows() {
+
+    $.get('data/shows.json', function(response) {
+      
+      globals.shows = response.data.shows;
+
+      for(var i=0; i < globals.shows.length; i++) {
+
+        var show = globals.shows[i];
+        var t = new Snap.Matrix().translate(show.x, show.y);
+
+        // clone template element
+
+        show.element = elements['map'].select('.location-template').clone().removeClass('location-template').transform(t);
+        show.element.data('idx', i);
+
+
+        //show.element.select('.location-text').node.innerHTML = show.city + ', ' + show.state;
+
+        // attach listeners
+
+        show.element.mouseover(function(e) {
+
+          TweenMax.to(this.select('.box-reveal-mask').node, 0.4, {
+            scaleX: '1'
+          });
+
+          TweenMax.to(this.select('.location-tooltip-text').node, 0.4, {
+            attr: {
+              y: '-50'
+            },
+            delay: 0.2
+          });
+
+          console.log(this.select('.location-tooltip-box'));
+
+          TweenMax.to(this.select('.location-tooltip-box').node, 0.4, {
+            attr: {
+              y: '-=30',
+              height: '+=30'
+            },
+            delay: 0.2
+          });
+
+          //console.log(this.select('.box-reveal-mask'));
+
+          // for(var i=0; i < globals.shows.length; i++) {
+          //   globals.shows[i].element.addClass('dimmed');
+          // }
+          // this.removeClass('dimmed');
+
+        });
+
+        show.element.mouseout(function() {
+
+          TweenMax.to(this.select('.box-reveal-mask').node, 0.4, {
+            scaleX: '0'
+          });
+
+          TweenMax.to(this.select('.location-tooltip-text').node, 0.4, {
+            attr: {
+              y: '0'
+            },
+            overwrite: true
+          });
+
+          TweenMax.to(this.select('.location-tooltip-box').node, 0.4, {
+            attr: {
+              y: '-200',
+              height: '200'
+            },
+            overwrite: true
+          });
+
+          // for(var i=0; i < globals.shows.length; i++) {
+          //   globals.shows[i].element.removeClass('dimmed');
+          // }
+
+        });
+
+        show.element.click(function() {
+          console.log(this.data('idx'));
+        });
+
+        // set initiate tween
+
+        TweenMax.to(show.element.select('.box-reveal-mask').node, 0, {
+          scaleX: '0%'
+        });
+
+        // TweenMax.to(globals.shows[i].element.select('g').node, 0, {
+        //   x: 15,
+        //   y: 15,
+        //   scale: 0
+        // });
+
+      }
+
+      displayShows();
+
+    });
+
+  }
+
+  function displayShows() {
+
+    // for(var i=0; i < globals.shows.length; i++) {
+
+    //   TweenMax.to(globals.shows[i].element.select('g').node, 0.4, {
+    //     x: 0,
+    //     y: 0,
+    //     scale: 1,
+    //     delay: 3 + i * 0.3,
+    //     ease: Back.easeOut
+    //   });
+
+    // }
+
+  }
+
+  function hideShows() {
+
+    // for(var i=0; i < globals.shows.length; i++) {
+
+    //   TweenMax.to(globals.shows[i].element.select('g').node, 0.4, {
+    //     x: 15,
+    //     y: 15,
+    //     scale: 0
+    //   });
+
+    // }
 
   }
 
@@ -481,23 +587,23 @@ function createJackAndTheGiant () {
       y: -175
     });
 
-    TweenMax.to(elements['clouds4'].node, duration, {
+    TweenMax.to(elements['cloud5'].node, duration, {
       y: -150
     });
 
-    TweenMax.to(elements['clouds3'].node, duration, {
+    TweenMax.to(elements['cloud4'].node, duration, {
       y: -125
     });
 
-    TweenMax.to(elements['clouds2'].node, duration, {
+    TweenMax.to(elements['cloud3'].node, duration, {
       y: -100
     });
 
-    TweenMax.to(elements['clouds1'].node, duration, {
+    TweenMax.to(elements['cloud2'].node, duration, {
       y: -75
     });
 
-    TweenMax.to(elements['clouds0'].node, duration, {
+    TweenMax.to(elements['cloud1'].node, duration, {
       y: -50
     });
 
@@ -536,6 +642,10 @@ function createJackAndTheGiant () {
 
     globals.status = 'center';
 
+    hideShows();
+
+    $container.removeClass();
+
     for(var i in elements) {
       TweenMax.to(elements[i].node, duration, {
         x: 0,
@@ -549,120 +659,52 @@ function createJackAndTheGiant () {
   function intro() {
 
     var duration = 5;
+    var easing = Quint.EaseOut;
 
     TweenMax.from(elements['cliff'].node, duration, {
-      y: 1800
+      y: 1800,
+      ease: easing
     });
 
     TweenMax.from(elements['mountains'].node, duration, {
-      y: 1300
+      y: 1300,
+      ease: easing
     });
 
     TweenMax.from(elements['giant'].node, duration, {
-      y: 1000
+      y: 1000,
+      ease: easing
     });
 
-    TweenMax.from(elements['clouds4'].node, duration, {
-      y: 1000
+    TweenMax.from(elements['cloud5'].node, duration, {
+      y: 1000,
+      ease: easing
     });
 
-    TweenMax.from(elements['clouds3'].node, duration, {
-      y: 900
+    TweenMax.from(elements['cloud4'].node, duration, {
+      y: 900,
+      ease: easing
     });
 
-    TweenMax.from(elements['clouds2'].node, duration, {
-      y: 800
+    TweenMax.from(elements['cloud3'].node, duration, {
+      y: 800,
+      ease: easing
     });
 
-    TweenMax.from(elements['clouds1'].node, duration, {
-      y: 700
+    TweenMax.from(elements['cloud2'].node, duration, {
+      y: 700,
+      ease: easing
     });
 
-    TweenMax.from(elements['clouds0'].node, duration, {
-      y: 600
+    TweenMax.from(elements['cloud1'].node, duration, {
+      y: 600,
+      ease: easing
     });
 
     TweenMax.from(elements['stars'].node, duration, {
-      y: 400
+      y: 400,
+      ease: easing
     });
-
-
-
-    // TweenMax.from(elements['stars'].node, 5, {
-    //   y: 200
-    // });
-
-    // TweenMax.from(elements['giant'].node, 10, {
-    //   scale: 80,
-    //   delay: 2,
-    //   ease: Circ.easeInOut,
-    //   transformOrigin: '50% 50%'
-    // });
-
-    // TweenMax.from(elements['mountains'].node, 1, {
-    //   scale: 4,
-    //   delay: 6,
-    //   y: 600,
-    //   ease: Circ.easeInOut,
-    //   transformOrigin: '50% 0%'
-    // });
-
-    // TweenMax.from($('.clouds-0'), 5, {
-    //   y: 0,
-    //   scale: 3,
-    //   delay: 0.5,
-    //   transformOrigin:"50% 0%"
-    // });
-
-    // TweenMax.from($('.clouds-1'), 5, {
-    //   y: 0,
-    //   scale: 3,
-    //   delay: 1,
-    //   transformOrigin:"50% 0%"
-    // });
-
-    // TweenMax.from($('.clouds-2'), 5, {
-    //   y: 0,
-    //   scale: 3,
-    //   delay: 1.5,
-    //   transformOrigin:"50% 0%"
-    // });
-
-    // TweenMax.from($('.clouds-3'), 5, {
-    //   y: 0,
-    //   scale: 3,
-    //   delay: 2,
-    //   transformOrigin:"50% 0%"
-    // });
-
-    // TweenMax.from($('.clouds-4'), 5, {
-    //   y: 0,
-    //   scale: 3,
-    //   delay: 2.5,
-    //   transformOrigin:"50% 0%"
-    // });
-
-
-    // TweenMax.from($('.giant'), 5, {
-    //   y: 0,
-    //   scale: 80,
-    //   delay: 0,
-    //   transformOrigin:"50% 50%"
-    // });
-
-    // TweenMax.from($('.mountains'), 5, {
-    //   y: 0,
-    //   scale: 3,
-    //   delay: 3,
-    //   transformOrigin:"50% 0%"
-    // });
-
-    // TweenMax.from($('.cliff'), 5, {
-    //   x: -2000,
-    //   scale: 80,
-    //   delay: 1,
-    //   transformOrigin:"50% 0%"
-    // });
 
   }
 
@@ -674,7 +716,7 @@ function createJackAndTheGiant () {
 
       // left arrow
       case 37:
-      (globals.status === 'right') ? lookCenter(2) : lookLeft(3);
+      (globals.status === 'right') ? lookCenter(2) : lookLeft(2);
       break;
 
       // up arrow
@@ -684,7 +726,7 @@ function createJackAndTheGiant () {
 
       // right arrow
       case 39:
-      (globals.status === 'left') ? lookCenter(2) : lookRight(3);
+      (globals.status === 'left') ? lookCenter(2) : lookRight(2);
       break;
 
       // down arrow
@@ -697,72 +739,88 @@ function createJackAndTheGiant () {
   });
 
 
-  setTimeout(function() {
-    //intro();
 
-
-  }, 400);
 
   
   $(document).click(function() {
-    $("#audio-player").toggleClass('open');
+    // $("#audio-player").toggleClass('open');
+    // $('body').toggleClass('nav-open');
   })
+
+  // function buildScarf() {
+
+  //   var settings = {
+  //     wavelength: 10,
+  //     amplitude: 7,
+  //     period: 200,
+  //     startY: 30,
+  //     width: 150,
+  //     height: 100
+  //   };
+
+  //   var t = new Snap.Matrix().translate(1000, 1000);
+
+
+
+  // }
 
   // scarf 
 
-  var settings = {
-    wavelength: 10,
-    amplitude: 7,
-    period: 200,
-    squeeze: -0.8,
-    startY: 30
-  };
+  function buildScarf() {
 
-  var w = 150;
-  var h = 100;
-  var length = w - 30;
+    var settings = {
+      wavelength: 10,
+      amplitude: 7,
+      period: 200,
+      squeeze: -0.8,
+      startY: 30
+    };
+
+    var w = 150;
+    var h = 100;
+    var length = w - 30;
+
+    var t = new Snap.Matrix().translate(-140, -23);
+    var scarf = s.polyline();
+    var scarfContainer = s.group().transform(t).addClass('scarf').append(scarf);
+
+    setInterval(function() {
+
+      var points = [];
+      var now = (new Date) / settings.period;
+
+      function getCoordinates(x) {
+
+        var pct = x / w;
+        var o = Math.sin(x / settings.wavelength - now) * settings.amplitude * pct;
+        
+        return { x: w-x, y: settings.startY + o }
+
+      }
+
+      for(var x=0; x<length; ++x) {
+
+        var coordinates = getCoordinates(x);
+        points.push(coordinates.x);
+        points.push(coordinates.y);
+
+      }
+
+      scarf.attr('points', points);
+
+    }, 60);
+
+     elements['jack'].select('g').append(scarfContainer);
+
+
+  }
 
   
 
-  var t = new Snap.Matrix().translate(1000, 1000);
-  var scarf = s.polyline();
-  var scarfContainer = s.group().transform(t).addClass('scarf').append(scarf);
-
-  setInterval(function() {
-
-    var points = [];
-    var now = (new Date) / settings.period;
-
-    function getCoordinates(x) {
-
-      var pct = x / w;
-      var o = Math.sin(x / settings.wavelength - now) * settings.amplitude * pct;
-      
-      return { x: w-x, y: settings.startY + o }
-
-    }
-
-    for(var x=0; x<length; ++x) {
-
-      var coordinates = getCoordinates(x);
-      points.push(coordinates.x);
-      points.push(coordinates.y);
-
-    }
-
-    scarf.attr('points', points);
-
-  }, 60);
-
-  scarf.attr('stroke', '#E61859');
-  scarf.attr('fill', 'none');
-  scarf.attr('stroke-width', '4');
-  scarf.attr('stroke-linecap', 'round');
 
 
-  setTimeout(function() {
-    elements['cliff'].append(scarfContainer);
-  }, 1000)
+
+
   
 
   //console.log(points);

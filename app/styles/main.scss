@@ -1,11 +1,47 @@
 // bower:scss
 // endbower
 
+@font-face {
+  font-family: 'CubanoRegular';
+  src: url('../fonts/cubano-regular-webfont.eot');
+  src: url('../fonts/cubano-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/cubano-regular-webfont.woff') format('woff'),
+       url('../fonts/cubano-regular-webfont.ttf') format('truetype'),
+       url('../fonts/cubano-regular-webfont.svg#CubanoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'blanchcaps';
+  src: url('../fonts/blanch_caps-webfont.eot');
+  src: url('../fonts/blanch_caps-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/blanch_caps-webfont.woff2') format('woff2'),
+       url('../fonts/blanch_caps-webfont.woff') format('woff'),
+       url('../fonts/blanch_caps-webfont.ttf') format('truetype'),
+       url('../fonts/blanch_caps-webfont.svg#blanchcaps') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
 
-  background: #1f2f42;
+  
   margin: 0;
   padding: 0;
+  font-family: 'CubanoRegular';
+
+}
+
+nav {
+
+  position: fixed;
+  top: 0; left: 0;
+  width: 250px; height: 100%;
+  background: #f0ffb4;
+  z-index: 100;
+  transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transform: translate3d(-250px,0,0);
 
 }
 
@@ -15,10 +51,630 @@ body {
   top: 50%; left: 50%;
   width: 3000px; height: 2000px;
   margin: -1000px 0 0 -1500px;
-  display: block;
+  background: #1f2f42;
 
+  // giant
+
+  .giant {
+
+    .heart {
+      cursor: pointer;
+    }
+
+  }
+
+  // tour
+
+  .tour {
+
+    .header {
+
+      circle {
+
+      }
+
+    }
+
+  }
+
+
+
+
+
+  // dialogue
+
+  .dialogue-box {
+
+    position: fixed;
+    top: 30px; left: 30px;
+    right: 30px;
+    height: 50%;
+    background: #FFF;
+    border-radius: 50px;
+    transform: translate3d(0,60px,0);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+    opacity: 0;
+    pointer-events: none;
+
+    &::before {
+
+      position: absolute;
+      top: 100%; left: 50%;
+      margin-left: -380px;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 10px 10px 0 10px;
+      border-color: #FFFFFF transparent transparent transparent;
+      content: ' ';
+    }
+    
+  }
+
+  &.dialogue .dialogue-box {
+
+    transform: translate3d(0,0,0);
+    opacity: 0.7;
+
+  }
+
+  .map {
+
+    .header {
+
+      > path {
+
+        stroke: #FFF;
+        fill: none;
+        
+        &:first-child {
+          transition: all 0.3s linear;
+        }
+
+        &:nth-child(2) {
+          transition: all 0.3s linear;
+          transition-delay: 0.3s;
+        }
+
+        &:nth-child(3) {
+          transition: all 0.5s linear;
+          transition-delay: 0.6s;
+        }
+
+        &:nth-child(4) {
+          transition: all 0.5s linear;
+          transition-delay: 1.1s;
+        }
+
+        &:nth-child(5) {
+          transition: all 0.5s linear;
+          transition-delay: 1.6s;
+        }
+
+      }
+
+      #letter-t-1 {
+        stroke-dasharray: 48.941287994384766;
+        stroke-dashoffset: 48.941287994384766;
+      }
+
+      #letter-t-2 {
+        stroke-dasharray: 58.74559020996094;
+        stroke-dashoffset: 58.74559020996094;
+      }
+
+      #letter-o {
+        stroke-dasharray: 112.51922607421875;
+        stroke-dashoffset: 112.51922607421875;
+      }
+
+      #letter-u {
+        stroke-dasharray: 101.31892395019531;
+        stroke-dashoffset: 101.31892395019531;
+      }
+
+      #letter-r {
+        stroke-dasharray: 156.67324829101562;
+        stroke-dashoffset: 156.67324829101562;
+      }
+
+      
+
+      circle {
+        fill: #FFF;
+      }
+
+    }
+
+    .outline {
+
+      path {
+
+        stroke: #FFF;
+        stroke-width: 3;
+        stroke-opacity: 0.4;
+        fill: #33465c;
+        fill-opacity: 0;
+        stroke-dasharray: 3689.630126953125;
+        stroke-dashoffset: -3689.630126953125;
+        transition: all 2s linear;
+
+      }
+
+      rect {
+        fill: #4fb98f;
+        fill-opacity: 0.5;
+      }
+
+
+    }
+
+    .bg {
+      fill: #1f2f42;
+    }
+
+    .trace-points {
+
+      circle {
+
+        fill: #FFF;
+        fill-opacity: 0;
+        transition: all 3s;
+
+      }
+
+
+    }
+
+    .states > path {
+
+    }
+  
+    .state {
+
+      fill: #33465c;
+      fill-opacity: 0;
+      stroke-width: 1px;
+      stroke: #33465c;
+      transition: all 2s linear;
+      stroke-opacity: 0;
+
+    }
+
+    #FL {
+      stroke-dasharray: 536.1780395507812;
+      stroke-dashoffset: 536.1780395507812;
+    }
+
+    #NH {
+      stroke-dasharray: 153.72906494140625;
+      stroke-dashoffset: 153.72906494140625;
+    }
+
+    #MI- {
+      stroke-dasharray: 345.603759765625;
+      stroke-dashoffset: 345.603759765625;
+    }
+
+    #SP- {
+      stroke-dasharray: 344.14666748046875;
+      stroke-dashoffset: 344.14666748046875;
+    }
+
+    #VT {
+      stroke-dasharray: 148.89227294921875;
+      stroke-dashoffset: 148.89227294921875;
+    }
+
+    #ME {
+      stroke-dasharray: 325.9866027832031;
+      stroke-dashoffset: 325.9866027832031;
+    }
+
+    #RI {
+      stroke-dasharray: 48.45236587524414;
+      stroke-dashoffset: 48.45236587524414;
+    }
+
+    #NY {
+      stroke-dasharray: 436.2271728515625;
+      stroke-dashoffset: 436.2271728515625;
+    }
+
+    #PA {
+      stroke-dasharray: 294.3970642089844;
+      stroke-dashoffset: 294.3970642089844;
+    }
+
+    #NJ {
+      stroke-dasharray: 152.55728149414062;
+      stroke-dashoffset: 152.55728149414062;
+    }
+
+    #DE {
+      stroke-dasharray: 79.57695770263672;
+      stroke-dashoffset: 79.57695770263672;
+    }
+
+    #MD {
+      stroke-dasharray: 313.15692138671875;
+      stroke-dashoffset: 313.15692138671875;
+    }
+
+    #VA {
+      stroke-dasharray: 429.7426452636719;
+      stroke-dashoffset: 429.7426452636719;
+    }
+
+    #WV {
+      stroke-dasharray: 304.55865478515625;
+      stroke-dashoffset: 304.55865478515625;
+    }
+
+    #OH {
+      stroke-dasharray: 291.7611999511719;
+      stroke-dashoffset: 291.7611999511719;
+    }
+
+    #IN {
+      stroke-dasharray: 271.47296142578125;
+      stroke-dashoffset: 271.47296142578125;
+    }
+
+    #IL {
+      stroke-dasharray: 355.0815734863281;
+      stroke-dashoffset: 355.0815734863281;
+    }
+
+    #CT {
+      stroke-dasharray: 98.18295288085938;
+      stroke-dashoffset: 98.18295288085938;
+    }
+
+    #WI {
+      stroke-dasharray: 367.9588623046875;
+      stroke-dashoffset: 367.9588623046875;
+    }
+
+    #NC {
+      stroke-dasharray: 408.3710632324219;
+      stroke-dashoffset: 408.3710632324219;
+    }
+
+    #MA {
+      stroke-dasharray: 224.71006774902344;
+      stroke-dashoffset: 224.71006774902344;
+    }
+
+    #TN {
+      stroke-dasharray: 358.1337890625;
+      stroke-dashoffset: 358.1337890625;
+    }
+
+    #AR {
+      stroke-dasharray: 313.14508056640625;
+      stroke-dashoffset: 313.14508056640625;
+    }
+
+    #MO {
+      stroke-dasharray: 398.3327941894531;
+      stroke-dashoffset: 398.3327941894531;
+    }
+
+    #GA {
+      stroke-dasharray: 340.3572998046875;
+      stroke-dashoffset: 340.3572998046875;
+    }
+
+    #SC {
+      stroke-dasharray: 246.3546142578125;
+      stroke-dashoffset: 246.3546142578125;
+    }
+
+    #KY {
+      stroke-dasharray: 351.7411804199219;
+      stroke-dashoffset: 351.7411804199219;
+    }
+
+    #AL {
+      stroke-dasharray: 336.8968200683594;
+      stroke-dashoffset: 336.8968200683594;
+    }
+
+    #LA {
+      stroke-dasharray: 448.332275390625;
+      stroke-dashoffset: 448.332275390625;
+    }
+
+    #MS {
+      stroke-dasharray: 317.33306884765625;
+      stroke-dashoffset: 317.33306884765625;
+    }
+
+    #IA {
+      stroke-dasharray: 319.70513916015625;
+      stroke-dashoffset: 319.70513916015625;
+    }
+
+    #MN {
+      stroke-dasharray: 498.2877502441406;
+      stroke-dashoffset: 498.2877502441406;
+    }
+
+    #OK {
+      stroke-dasharray: 457.7494201660156;
+      stroke-dashoffset: 457.7494201660156;
+    }
+
+    #TX {
+      stroke-dasharray: 888.1085815429688;
+      stroke-dashoffset: 888.1085815429688;
+    }
+
+    #NM {
+      stroke-dasharray: 459.4984130859375;
+      stroke-dashoffset: 459.4984130859375;
+    }
+
+    #KS {
+      stroke-dasharray: 377.7431640625;
+      stroke-dashoffset: 377.7431640625;
+    }
+
+    #NE {
+      stroke-dasharray: 394.68231201171875;
+      stroke-dashoffset: 394.68231201171875;
+    }
+
+    #SD {
+      stroke-dasharray: 387.7952575683594;
+      stroke-dashoffset: 387.7952575683594;
+    }
+
+    #ND {
+      stroke-dasharray: 346.232666015625;
+      stroke-dashoffset: 346.232666015625;
+    }
+
+    #WY {
+      stroke-dasharray: 400.1448669433594;
+      stroke-dashoffset: 400.1448669433594;
+    }
+
+    #MT {
+      stroke-dasharray: 552.1424560546875;
+      stroke-dashoffset: 552.1424560546875;
+    }
+
+    #CO {
+      stroke-dasharray: 410.5419921875;
+      stroke-dashoffset: 410.5419921875;
+    }
+
+    #ID {
+      stroke-dasharray: 500.3465576171875;
+      stroke-dashoffset: 500.3465576171875;
+    }
+
+    #UT {
+      stroke-dasharray: 392.43896484375;
+      stroke-dashoffset: 392.43896484375;
+    }
+
+    #AZ {
+      stroke-dasharray: 440.48870849609375;
+      stroke-dashoffset: 440.48870849609375;
+    }
+
+    #NV {
+      stroke-dasharray: 466.4283447265625;
+      stroke-dashoffset: 466.4283447265625;
+    }
+
+    #OR {
+      stroke-dasharray: 428.80902099609375;
+      stroke-dashoffset: 428.80902099609375;
+    }
+
+    #WA {
+      stroke-dasharray: 409.11669921875;
+      stroke-dashoffset: 409.11669921875;
+    }
+
+    #CA {
+      stroke-dasharray: 655.4913940429688;
+      stroke-dashoffset: 655.4913940429688;
+    }
+
+    .location {
+
+      cursor: pointer;
+      transition: all 0.3s;
+
+      .location-tooltip-text {
+
+        .text-location {
+          font-size: 18px;
+        }
+
+        .text-venue {
+          font-size: 24px;
+        }
+
+        .text-date {
+          font-size: 20px;
+        }
+
+        
+
+      }
+
+      .location-dot {
+        fill: #FFF;
+      }
+
+      .location-outline {
+
+        fill: none;
+        stroke-width: 1px;
+        stroke: #FFF;
+        stroke-dasharray: 40;
+        
+      }
+
+      .location-hit {
+
+        fill-opacity: 0;
+
+      }
+
+      .location-text {
+
+        fill: none;
+        font-size: 12px;
+        opacity: 0;
+        transition: all 0.3s;
+
+      }
+
+      &.location-template {
+        display: none;
+      }
+
+      &:hover {
+
+        .location-text {
+          fill: #FFF;
+          opacity: 1;
+        }
+
+        .location-outline {
+          r: 10;
+        }
+
+      }
+
+      &.dimmed {
+
+        fill-opacity: 0.3;
+        stroke-opacity: 0.3;
+
+      }
+
+    }
+  
+
+  }
+
+  &.shows {
+
+    .outline {
+      path {
+        stroke-dashoffset: 0 !important;
+        animation: mapflash 1s 2.5s forwards;
+      }
+
+      rect {
+        height: 100%;
+      }
+      
+    }
+
+    .trace-points circle {
+      fill-opacity: 1;
+    }
+
+    .map {
+
+      .header {
+
+        path {
+          stroke-dashoffset: 0 !important;
+        }
+      }
+      
+      .state {
+
+        stroke-dashoffset: 0 !important;
+        animation: mapflash 1s 2.5s forwards;
+
+        
+      }
+
+    }
+
+  }
 
 }
+
+#jackandthegiantsvg {
+
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  // clouds
+
+  .cloud1 {
+    fill: #223448;
+    pointer-events: none;
+  }
+
+  .cloud2 {
+    fill: #274455;
+    pointer-events: none;
+  }
+
+  .cloud3 {
+    fill: #4fb98f;
+    pointer-events: none;
+  }
+
+  .cloud4 {
+    fill: #9beea6;
+    pointer-events: none;
+  }
+
+  .cloud5 {
+    fill: #f0ffb4;
+    pointer-events: none;
+  }
+
+  .cloud6 {
+    fill: #f9fae7;
+    pointer-events: none;
+  }
+
+  .mountains2 {
+    fill: #eadd9c;
+  }
+
+  
+
+}
+
+
+body.nav-open {
+  nav {
+    transform: translate3d(0,0,0);
+  }
+}
+
+
+
+// nav 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #audio-player {
 
@@ -27,6 +683,7 @@ body {
   width: 250px; height: 66px;
   perspective: 1000px;
   color: #FFF;
+  z-index: 200;
 
   .audio-player-embed {
 
@@ -71,12 +728,46 @@ body {
 
 }
 
-.clouds {
-  pointer-events: none;
+
+
+
+
+.scarf {
+
+  fill: none;
+  stroke: #c0326b;
+  stroke-width: 3px;
+  stroke-linecap: round;
+
 }
 
-.stars circle {
-  cursor: pointer;
+
+#test {
+
+  position: fixed;
+  top: -600px; left: 0;
+  z-index:999;
+
+  path {
+    fill: #FFFFFF;
+  }
 }
 
+// animations
+
+@keyframes mapflash {
+  0% {
+    stroke-opacity: 0.4;
+    fill-opacity: 0;
+  }
+
+  20% {
+    stroke-opacity: 1;
+    fill-opacity: 0.7;
+  }
+  100% {
+    stroke-opacity: 0.4;
+    fill-opacity: 0.4;
+  }
+}
 
