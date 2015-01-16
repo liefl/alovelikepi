@@ -443,97 +443,124 @@ function createJackAndTheGiant () {
       
       globals.shows = response.data.shows;
 
+      var points = [];
+
       for(var i=0; i < globals.shows.length; i++) {
 
         var show = globals.shows[i];
         var t = new Snap.Matrix().translate(show.x, show.y);
 
-        // clone template element
+        // clone template element and fill in event information
 
-        show.element = elements['map'].select('.location-template').clone().removeClass('location-template').transform(t);
-        show.element.data('idx', i);
+        show.element = elements['map'].select('.map-location-template').clone().removeClass('map-location-template').transform(t);
+        show.element.select('.map-text-location').node.innerHTML = show.city + ', ' + show.state;
+        
+        for(var j=0; j < show.events.length; j++) {
 
+          var e = show.events[j];
 
-        //show.element.select('.location-text').node.innerHTML = show.city + ', ' + show.state;
+          var t = new Snap.Matrix().translate(0, j * 94 + 6);
+          var n = show.element.select('.map-location-event-template').clone().removeClass('map-location-event-template').transform(t);
 
-        // attach listeners
+          n.select('.map-location-venue').node.innerHTML = e.venue;
+          n.select('.map-location-date').node.innerHTML = e.date;
+          n.select('.map-location-info').attr('xlink:href', e.link);
 
-        show.element.mouseover(function(e) {
+        }
 
-          TweenMax.to(this.select('.box-reveal-mask').node, 0.4, {
-            scaleX: '1'
-          });
+        // events (use jquery here for more robust event listeners)
 
-          TweenMax.to(this.select('.location-tooltip-text').node, 0.4, {
+        var $element = $(show.element.node);
+
+        $element.data('width-1', (show.element.select('.map-text-location').getBBox().width + 21));
+        $element.data('width-2', (show.element.select('.map-location-text').getBBox().width + 21));
+        $element.data('height-2', show.events.length * 95);
+
+        $element.find('.map-location-box').attr('width', $element.data('width-1'));
+        $element.find('.map-location-mask-rect').attr('width', $element.data('width-1'));
+
+        $element.on('mouseenter', function() {
+
+          var targetWidth = ($(this).data('width-2') > $(this).data('width-1')) ? $(this).data('width-2') : $(this).data('width-1');
+          var targetHeight = $(this).data('height-2');
+
+          // TweenMax.to($(this).find('.map-location-hover'), 0.8, {
+          //   y: -10,
+          //   x: 10,
+          //   alpha: 1,
+          //   ease: Elastic.easeOut
+          // });
+
+          TweenMax.to($(this).find('.map-location-box'), 0.5, {
             attr: {
-              y: '-50'
+              width: targetWidth,
+              height: 44 + targetHeight,
+              y: -44 - targetHeight
             },
-            delay: 0.2
+            ease: Quint.easeOut
           });
 
-          console.log(this.select('.location-tooltip-box'));
-
-          TweenMax.to(this.select('.location-tooltip-box').node, 0.4, {
-            attr: {
-              y: '-=30',
-              height: '+=30'
+          TweenMax.to($(this).find('.map-location-mask-rect'), 0.5, {
+             attr: {
+              height: 43 + targetHeight,
+              width: targetWidth
             },
-            delay: 0.2
+            ease: Quint.easeOut
           });
 
-          //console.log(this.select('.box-reveal-mask'));
+          TweenMax.to($(this).find('.map-location-text'), 0.5, {
+            y: -targetHeight,
+            ease: Quint.easeOut
+          });
 
-          // for(var i=0; i < globals.shows.length; i++) {
-          //   globals.shows[i].element.addClass('dimmed');
-          // }
-          // this.removeClass('dimmed');
 
         });
 
-        show.element.mouseout(function() {
+        $element.on('mouseleave', function() {
 
-          TweenMax.to(this.select('.box-reveal-mask').node, 0.4, {
-            scaleX: '0'
-          });
+          // TweenMax.to($(this).find('.map-location-hover'), 0.2, {
+          //   y: -20,
+          //   x: 20,
+          //   alpha: 0
+          // });
 
-          TweenMax.to(this.select('.location-tooltip-text').node, 0.4, {
-            attr: {
-              y: '0'
+
+          TweenMax.to($(this).find('.map-location-box'), 0.5, {
+             attr: {
+              width: $(this).data('width-1'),
+              height: 44,
+              y: -44
             },
-            overwrite: true
+            ease: Quint.easeInOut
           });
 
-          TweenMax.to(this.select('.location-tooltip-box').node, 0.4, {
-            attr: {
-              y: '-200',
-              height: '200'
+          TweenMax.to($(this).find('.map-location-mask-rect'), 0.5, {
+             attr: {
+              height: 43, 
+              width: $(this).data('width-1')
             },
-            overwrite: true
+            ease: Quint.easeInOut
           });
 
-          // for(var i=0; i < globals.shows.length; i++) {
-          //   globals.shows[i].element.removeClass('dimmed');
-          // }
+          TweenMax.to($(this).find('.map-location-text'), 0.5, {
+             y: 0,
+            ease: Quint.easeInOut
+          });
 
         });
 
-        show.element.click(function() {
-          console.log(this.data('idx'));
+        TweenMax.to($element.find('.map-location-hover'), 0, {
+          x: 20,
+          y: -20,
+          opacity: 0
         });
-
-        // set initiate tween
-
-        TweenMax.to(show.element.select('.box-reveal-mask').node, 0, {
-          scaleX: '0%'
-        });
-
-        // TweenMax.to(globals.shows[i].element.select('g').node, 0, {
-        //   x: 15,
-        //   y: 15,
-        //   scale: 0
-        // });
 
       }
+
+      //points.push(globals.shows[0].x, globals.shows[0].y);
+
+      //elements['map'].select('g').polyline(points).addClass('map-path');
+      
 
       displayShows();
 
@@ -543,31 +570,59 @@ function createJackAndTheGiant () {
 
   function displayShows() {
 
-    // for(var i=0; i < globals.shows.length; i++) {
+    for(var i=0; i < globals.shows.length; i++) {
 
-    //   TweenMax.to(globals.shows[i].element.select('g').node, 0.4, {
-    //     x: 0,
-    //     y: 0,
-    //     scale: 1,
-    //     delay: 3 + i * 0.3,
-    //     ease: Back.easeOut
-    //   });
+      // TweenMax.to(globals.shows[i].element.select('.map-location-hover').node, 0.8, {
+      //   x: 0,
+      //   y: 0,
+      //   opacity: 1,
+      //   delay: 3 + i * 0.3,
+      //   ease: Bounce.easeOut
+      // });
 
-    // }
+      var element = globals.shows[i].element;
+
+      TweenMax.to(element.select('.location-dot').node, 0.3, {
+        attr: {
+          r: 5
+        },
+        delay: 3 + i * 0.2,
+        ease: Back.easeOut
+      });
+
+      TweenMax.to(element.select('.map-location-hover').node, 0.8, {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        delay: 3.2 + i * 0.2,
+        ease: Elastic.easeOut
+      });
+
+    }
 
   }
 
   function hideShows() {
 
-    // for(var i=0; i < globals.shows.length; i++) {
+    for(var i=0; i < globals.shows.length; i++) {
 
-    //   TweenMax.to(globals.shows[i].element.select('g').node, 0.4, {
-    //     x: 15,
-    //     y: 15,
-    //     scale: 0
-    //   });
+      var element = globals.shows[i].element;
 
-    // }
+      TweenMax.to(element.select('.location-dot').node, 0.5, {
+        attr: {
+          r: 0
+        },
+        ease: Back.easeIn
+      });
+
+      TweenMax.to(element.select('.map-location-hover').node, 0.5, {
+        x: 20,
+        y: -20,
+        opacity: 0,
+        ease: Back.easeIn
+      });
+
+    }
 
   }
 

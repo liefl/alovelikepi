@@ -6,30 +6,44 @@
         "y": 205,
         "city": "New York",
         "state": "NY",
-        "venue": "Venue Name Here",
-        "time": "8:00PM",
-        "link": "http://www.google.com",
-        "desc": "room for description here"
+        "events": [
+          {
+            "venue": "Venue Name Here",
+            "date": "October 11th, 2015 - 8:30PM",
+            "link": "http://www.facebook.com"
+          },
+          {
+            "venue": "Venue Name Here 2",
+            "date": "October 11th, 2015 - 8:30PM",
+            "link": "http://www.google.com"
+          }
+        ]
       },
       {
-        "x": 739,
-        "y": 149,
-        "city": "Toronto",
-        "state": "ON",
-        "venue": "Venue Name Here",
-        "time": "8:00PM",
-        "link": "http://www.google.com",
-        "desc": "room for description here"
+        "x": 455,
+        "y": 466,
+        "city": "SOMEWHERE LONG",
+        "state": "TX",
+        "events": [
+          {
+            "venue": "Venue Name Here",
+            "date": "October 11th, 2015 - 8:30PM",
+            "link": "http://www.google.com"
+          }
+        ]
       },
       {
-        "x": 840,
-        "y": 215,
-        "city": "New Brunswick",
-        "state": "NJ",
-        "venue": "Venue Name Here",
-        "time": "8:00PM",
-        "link": "http://www.google.com",
-        "desc": "room for description here"
+        "x": 555,
+        "y": 356,
+        "city": "WHO CARES",
+        "state": "MI",
+        "events": [
+          {
+            "venue": "super long Venue Name",
+            "date": "October 11th, 2015 - 8:30PM",
+            "link": "http://www.google.com"
+          }
+        ]
       }
     ]
   }
