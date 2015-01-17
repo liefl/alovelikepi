@@ -42,6 +42,38 @@ function mapPathToCircles(path) {
   console.log(txt);
 }
 
+function mapPathToPolygon(path, polygon) {
+
+
+  var pathPoints = path.split(' ');
+  var pathPointsLength = pathPoints.length;
+  var polygonPoints = polygon.split(' ');
+  var polygonPointsLength = polygonPoints.length;
+
+  var pathRatio = Math.round(pathPoints.length / polygonPoints.length);
+  var pathIndex = -1;
+
+  var targetPoints = [];
+
+  for(var i=0; i < pathPoints.length; i++) {
+
+    if((i % pathRatio) === 0) {
+      pathIndex++;
+    }
+
+    var p = polygonPoints[pathIndex];
+
+    targetPoints.push(p);
+
+    //console.log(i % pathRatio);
+
+  }
+
+  console.log(targetPoints.join(' '));
+
+}
+
+
 function mapTourHeader() {
 
   var html = '';

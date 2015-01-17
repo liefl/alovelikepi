@@ -90,7 +90,7 @@ function createJackAndTheGiant () {
     {
       name: 'map',
       path: 'images/map.svg',
-      xPos: 1010,
+      xPos: 1030,
       yPos: 450
     }
   ];
@@ -152,6 +152,9 @@ function createJackAndTheGiant () {
 
     attachListeners();
 
+    //console.log($('.table-view-outline')[0].getTotalLength());
+
+
   //animateTraceStars();
   //buildPathCSS($('.map').find('.outline').find('path'));
   //mapPathToCircles($('.outline').find('path'));
@@ -162,6 +165,13 @@ function createJackAndTheGiant () {
   function attachListeners() {
 
     elements['giant'].select('.heart').click(lookInHeart);
+
+    $('.toggle-list').click(function() {
+      console.log('click');
+     $container.toggleClass('table-state');
+
+    });
+
   }
 
 
@@ -468,7 +478,7 @@ function createJackAndTheGiant () {
 
         }
 
-        // events (use jquery here for more robust event listeners)
+        // interactions (use jquery here for more robust event listeners)
 
         var $element = $(show.element.node);
 
@@ -483,13 +493,6 @@ function createJackAndTheGiant () {
 
           var targetWidth = ($(this).data('width-2') > $(this).data('width-1')) ? $(this).data('width-2') : $(this).data('width-1');
           var targetHeight = $(this).data('height-2');
-
-          // TweenMax.to($(this).find('.map-location-hover'), 0.8, {
-          //   y: -10,
-          //   x: 10,
-          //   alpha: 1,
-          //   ease: Elastic.easeOut
-          // });
 
           TweenMax.to($(this).find('.map-location-box'), 0.5, {
             attr: {
@@ -513,17 +516,9 @@ function createJackAndTheGiant () {
             ease: Quint.easeOut
           });
 
-
         });
 
         $element.on('mouseleave', function() {
-
-          // TweenMax.to($(this).find('.map-location-hover'), 0.2, {
-          //   y: -20,
-          //   x: 20,
-          //   alpha: 0
-          // });
-
 
           TweenMax.to($(this).find('.map-location-box'), 0.5, {
              attr: {
@@ -549,19 +544,22 @@ function createJackAndTheGiant () {
 
         });
 
+
         TweenMax.to($element.find('.map-location-hover'), 0, {
           x: 20,
           y: -20,
           opacity: 0
         });
 
+        
+
       }
 
-      //points.push(globals.shows[0].x, globals.shows[0].y);
-
-      //elements['map'].select('g').polyline(points).addClass('map-path');
       
 
+     
+      
+      hideShows();
       displayShows();
 
     });
@@ -569,6 +567,25 @@ function createJackAndTheGiant () {
   }
 
   function displayShows() {
+
+    // animations
+
+    TweenMax.to(elements['map'].select('.map-header-text').node, 0.4, {
+      attr: {
+        y: 0
+      },
+      alpha: 1,
+      delay: 2.5,
+      ease: Back.easeOut
+    });
+
+    TweenMax.to(elements['map'].select('.map-header-toggle').node, 0.4, {
+      y: 15,
+      alpha: 1,
+      delay: 2.7,
+      ease: Back.easeOut
+    });
+
 
     for(var i=0; i < globals.shows.length; i++) {
 
@@ -604,6 +621,46 @@ function createJackAndTheGiant () {
 
   function hideShows() {
 
+    TweenMax.to(elements['map'].select('.map-header-text').node, 0.4, {
+      attr: {
+        y: 20
+      },
+      alpha: 0,
+      overwrite: true
+    });
+
+    TweenMax.to(elements['map'].select('.map-header-toggle').node, 0.4, {
+      y: 35,
+      alpha: 0,
+      overwrite: true
+    });
+
+    for(var i=0; i < globals.shows.length; i++) {
+
+      var element = globals.shows[i].element;
+
+      TweenMax.to(element.select('.location-dot').node, 0.5, {
+        attr: {
+          r: 0
+        },
+        ease: Back.easeIn,
+        overwrite: true
+      });
+
+      TweenMax.to(element.select('.map-location-hover').node, 0.5, {
+        x: 20,
+        y: -20,
+        opacity: 0,
+        ease: Back.easeIn,
+        overwrite: true
+      });
+
+    }
+
+  }
+
+  function showTableView() {
+
     for(var i=0; i < globals.shows.length; i++) {
 
       var element = globals.shows[i].element;
@@ -623,6 +680,7 @@ function createJackAndTheGiant () {
       });
 
     }
+
 
   }
 
