@@ -1,6 +1,6 @@
 {
   "data" : {
-    "shows" : [
+    "locations" : [
       {
         "x": 851,
         "y": 205,
@@ -9,12 +9,12 @@
         "events": [
           {
             "venue": "Venue Name Here",
-            "date": "October 11th, 2015 - 8:30PM",
+            "date": 1447879714000,
             "link": "http://www.facebook.com"
           },
           {
             "venue": "Venue Name Here 2",
-            "date": "October 11th, 2015 - 8:30PM",
+            "date": 1447879714000,
             "link": "http://www.google.com"
           }
         ]
@@ -27,20 +27,20 @@
         "events": [
           {
             "venue": "Venue Name Here",
-            "date": "October 11th, 2015 - 8:30PM",
+            "date": 2447879714000,
             "link": "http://www.google.com"
           }
         ]
       },
       {
-        "x": 555,
+        "x": 851,
         "y": 356,
         "city": "WHO CARES",
         "state": "MI",
         "events": [
           {
             "venue": "super long Venue Name",
-            "date": "October 11th, 2015 - 8:30PM",
+            "date": 1447879714000,
             "link": "http://www.google.com"
           }
         ]

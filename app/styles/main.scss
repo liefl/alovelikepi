@@ -2,22 +2,10 @@
 // endbower
 
 @import "fonts";
+@import "colors";
 @import "map";
+@import "media";
 
-
-
-body {
-
-  
-  margin: 0;
-  padding: 0;
-  
-
-}
-
-a {
-  text-decoration: none;
-}
 
 nav {
 
@@ -31,9 +19,16 @@ nav {
 
 }
 
-// colors
+#fade {
 
-$pink: #c0326b;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #111;
+  pointer-events: none;
+  opacity: 0;
+
+}
 
 #jackandthegiant {
 
@@ -152,32 +147,7 @@ $pink: #c0326b;
 
   .map {
 
-    .map-outline {
-
-      > path {
-
-        stroke: #FFF;
-        stroke-width: 3;
-        stroke-opacity: 0.4;
-        fill: #33465c;
-        fill-opacity: 0;
-        stroke-miterlimit: 10;
-        stroke-dasharray: 3689.630126953125;
-        stroke-dashoffset: -3689.630126953125;
-        transition: all 2s linear;
-
-      }
-
-    }
-
-    // .map-outline-points {
-
-    //   fill: #FFF;
-    //   opacity: 0;
-    //   transition: all 3s;
-
-    // }
-
+  
     // table view
 
     .table-view {
@@ -222,9 +192,7 @@ $pink: #c0326b;
         .table-info {
 
           rect {
-
             fill: $pink;
-
           }
         }
 
@@ -246,19 +214,7 @@ $pink: #c0326b;
       }
     }
 
-    .map-path {
-
-        fill: none;
-        stroke: #FFF;
-        stroke-width: 2;
-        stroke-dasharray: 5;
-        stroke-dashoffset: 5;
-        animation: dash-animation 60s linear infinite;
-
-      }
-
     .map-location {
-
 
       &.map-location-template {
         display: none;
@@ -327,58 +283,58 @@ $pink: #c0326b;
 
   // states
 
-  &.shows {
+  // &.shows {
 
-    .map {
+  //   .map {
 
-      .map-outline {
+  //     .map-outline {
 
-        > path {
+  //       > path {
 
-          stroke-dashoffset: 0 !important;
-          animation: mapflash 1s 2.5s forwards;
+  //         stroke-dashoffset: 0 !important;
+  //         animation: mapflash 1s 2.5s forwards;
 
-        }
+  //       }
 
-      }
+  //     }
 
-      .map-outline-points {
+  //     .map-outline-points {
 
-        opacity: 1;
+  //       opacity: 1;
 
-      }
+  //     }
 
 
 
-    }
+  //   }
 
-    .trace-points circle {
+  //   .trace-points circle {
 
-      fill-opacity: 1;
+  //     fill-opacity: 1;
 
-    }
+  //   }
 
-  }
+  // }
 
-  &.table-state {
+  // &.table-state {
 
-    .table-view-outline {
+  //   .table-view-outline {
 
-      transition: all 0.5s 0.5s;
-      stroke-dashoffset: 0 !important;
+  //     transition: all 0.5s 0.5s;
+  //     stroke-dashoffset: 0 !important;
 
-    }
+  //   }
 
-    .table-view-shape {
-      fill-opacity: 1 !important;
-      transition: all 0.4s 1s;
-    }
+  //   .table-view-shape {
+  //     fill-opacity: 1 !important;
+  //     transition: all 0.4s 1s;
+  //   }
 
-    .map-outline, .map-locations {
-      transition: all 0.4s;
-      opacity: 0 !important;
-    }
-  }
+  //   .map-outline, .map-locations {
+  //     transition: all 0.4s;
+  //     opacity: 0 !important;
+  //   }
+  // }
 
 }
 
@@ -416,6 +372,11 @@ $pink: #c0326b;
   }
 
   .cloud6 {
+    fill: #f9fae7;
+    pointer-events: none;
+  }
+
+  .cloud7 {
     fill: #f9fae7;
     pointer-events: none;
   }
@@ -541,11 +502,11 @@ body.nav-open {
 
   20% {
     stroke-opacity: 1;
-    fill-opacity: 0.7;
+    fill-opacity: 0.9;
   }
   100% {
-    stroke-opacity: 0.4;
-    fill-opacity: 0.4;
+    stroke-opacity: 0.6;
+    fill-opacity: 0.7;
   }
 }
 

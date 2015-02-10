@@ -1,0 +1,12 @@
+{
+  "data" : {
+    "media" : [
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/test.jpg",
+        "caption": "caption goes here"
+      }
+    ]
+  }
+}

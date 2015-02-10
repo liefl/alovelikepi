@@ -5,236 +5,202 @@
 	 width="959px" height="593px" viewBox="0 0 959 593" enable-background="new 0 0 959 593" xml:space="preserve">
 	<g>
 
+		<!-- map state -->
+
 		<g class="map-state">
 			<g class="map-outline">
-				<path class="map-outline-shape" d="M55.77,3.38 55.77,58.24 0,189.15 37.18,337.61 90.35,391.69 135.98,397.67 200.98,440.7 291.33,437.32 321.75,493.87 346.19,509.08 363.09,491.27 390.91,500.63 425.49,570.7 466.83,586.3 462.67,540.28 533.52,494.65 605.28,509.86 627.25,488.8 627.25,474.37 717.6,482.04 730.21,476.06 758.94,500.63 758.94,520.91 807.95,579.15 824.85,571.48 824.85,529.36 780.91,456.69 784.29,417.04 819.78,386.62 866.97,319.15 854.36,294.84 872.95,205.14 926.12,168.87 909.22,152.75 910.91,118.17 959.27,80.99 939.64,60.84 923.52,26.13 899.99,31.2 888.16,86.97 831.61,107.25 810.42,133.38 817.18,147.68 769.99,162.11 773.37,173.94 732.81,210.99 699.92,208.52 704.99,186.55 719.29,186.55 707.46,150.28 688.87,167.18 683.02,159.51 696.54,146.9 691.47,125.84 666.12,118.17 648.44,144.3 643.37,178.1 653.51,193.31 643.37,217.75 631.54,218.66 625.56,195.91 632.32,124.15 666.12,113.1 693.16,114.01 677.04,100.49 649.22,96.2 630.63,106.34 608.66,86.06 579.15,108.03 546.26,112.32 547.95,102.18 593.45,75.92 586.82,69.29 554.71,73.45 502.32,50.7 311.61,44.72 89.57,0 87.88,24.44 55.77,3.38"/>
+				<!-- <g class="map-outline-lines">
+					<path d="M55.77,3.38 87.88,24.44"/>
+					<path d="M87.88,24.44 89.57,0"/>
+					<path d="M89.57,0 311.61,44.72"/>
+					<path d="M311.61,44.72 502.32,50.7"/>
+					<path d="M502.32,50.7 554.71,73.45"/>
+					<path d="M554.71,73.45 586.82,69.29"/>
+					<path d="M586.82,69.29 593.45,75.92"/>
+					<path d="M593.45,75.92 547.95,102.18"/>
+					<path d="M547.95,102.18 546.26,112.32"/>
+					<path d="M546.26,112.32 579.15,108.03"/>
+					<path d="M579.15,108.03 608.66,86.06"/>
+					<path d="M608.66,86.06 630.63,106.34"/>
+					<path d="M630.63,106.34 649.22,96.2"/>
+					<path d="M649.22,96.2 677.04,100.49"/>
+					<path d="M677.04,100.49 693.16,114.01"/>
+					<path d="M693.16,114.01 666.12,113.1"/>
+					<path d="M666.12,113.1 632.32,124.15"/>
+					<path d="M632.32,124.15 625.56,195.91"/>
+					<path d="M625.56,195.91 631.54,218.66"/>
+					<path d="M631.54,218.66 643.37,217.75"/>
+					<path d="M643.37,217.75 653.51,193.31"/>
+					<path d="M653.51,193.31 643.37,178.1"/>
+					<path d="M643.37,178.1 648.44,144.3"/>
+					<path d="M648.44,144.3 666.12,118.17"/>
+					<path d="M666.12,118.17 691.47,125.84"/>
+					<path d="M691.47,125.84 696.54,146.9"/>
+					<path d="M696.54,146.9 683.02,159.51"/>
+					<path d="M683.02,159.51 688.87,167.18"/>
+					<path d="M688.87,167.18 707.46,150.28"/>
+					<path d="M707.46,150.28 719.29,186.55"/>
+					<path d="M719.29,186.55 704.99,186.55"/>
+					<path d="M704.99,186.55 699.92,208.52"/>
+					<path d="M699.92,208.52 732.81,210.99"/>
+					<path d="M732.81,210.99 773.37,173.94"/>
+					<path d="M773.37,173.94 769.99,162.11"/>
+					<path d="M769.99,162.11 817.18,147.68"/>
+					<path d="M817.18,147.68 810.42,133.38"/>
+					<path d="M810.42,133.38 831.61,107.25"/>
+					<path d="M831.61,107.25 888.16,86.97"/>
+					<path d="M888.16,86.97 899.99,31.2"/>
+					<path d="M899.99,31.2 923.52,26.13"/>
+					<path d="M923.52,26.13 939.64,60.84"/>
+					<path d="M939.64,60.84 959.27,80.99"/>
+					<path d="M959.27,80.99 910.91,118.17"/>
+					<path d="M910.91,118.17 909.22,152.75"/>
+					<path d="M909.22,152.75 926.12,168.87"/>
+					<path d="M926.12,168.87 872.95,205.14"/>
+					<path d="M872.95,205.14 854.36,294.84"/>
+					<path d="M854.36,294.84 866.97,319.15"/>
+					<path d="M866.97,319.15 819.78,386.62"/>
+					<path d="M819.78,386.62 784.29,417.04"/>
+					<path d="M784.29,417.04 780.91,456.69"/>
+					<path d="M780.91,456.69 824.85,529.36"/>
+					<path d="M824.85,529.36 824.85,571.48"/>
+					<path d="M824.85,571.48 807.95,579.15"/>
+					<path d="M807.95,579.15 758.94,520.91"/>
+					<path d="M758.94,520.91 758.94,500.63"/>
+					<path d="M758.94,500.63 730.21,476.06"/>
+					<path d="M730.21,476.06 717.6,482.04"/>
+					<path d="M717.6,482.04 627.25,474.37"/>
+					<path d="M627.25,474.37 627.25,488.8"/>
+					<path d="M627.25,488.8 605.28,509.86"/>
+					<path d="M605.28,509.86 533.52,494.65"/>
+					<path d="M533.52,494.65 462.67,540.28"/>
+					<path d="M462.67,540.28 466.83,586.3"/>
+					<path d="M466.83,586.3 425.49,570.7"/>
+					<path d="M425.49,570.7 390.91,500.63"/>
+					<path d="M390.91,500.63 363.09,491.27"/>
+					<path d="M363.09,491.27 346.19,509.08"/>
+					<path d="M346.19,509.08 321.75,493.87"/>
+					<path d="M321.75,493.87 291.33,437.32"/>
+					<path d="M291.33,437.32 200.98,440.7"/>
+					<path d="M200.98,440.7 135.98,397.67"/>
+					<path d="M135.98,397.67 90.35,391.69"/>
+					<path d="M90.35,391.69 37.18,337.61"/>
+					<path d="M37.18,337.61 0,189.15"/>
+					<path d="M0,189.15 55.77,58.24"/>
+					<path d="M55.77,58.24 55.77,3.38"/>
+					
+				</g> -->
+
+
+
+
+				<path class="map-outline-shape" d="M55.77,3.38 87.88,24.44 89.57,0 311.61,44.72 502.32,50.7 554.71,73.45 586.82,69.29 593.45,75.92 547.95,102.18 546.26,112.32 579.15,108.03 608.66,86.06 630.63,106.34 649.22,96.2 677.04,100.49 693.16,114.01 666.12,113.1 632.32,124.15 625.56,195.91 631.54,218.66 643.37,217.75 653.51,193.31 643.37,178.1 648.44,144.3 666.12,118.17 691.47,125.84 696.54,146.9 683.02,159.51 688.87,167.18 707.46,150.28 719.29,186.55 704.99,186.55 699.92,208.52 732.81,210.99 773.37,173.94 769.99,162.11 817.18,147.68 810.42,133.38 831.61,107.25 888.16,86.97 899.99,31.2 923.52,26.13 939.64,60.84 959.27,80.99 910.91,118.17 909.22,152.75 926.12,168.87 872.95,205.14 854.36,294.84 866.97,319.15 819.78,386.62 784.29,417.04 780.91,456.69 824.85,529.36 824.85,571.48 807.95,579.15 758.94,520.91 758.94,500.63 730.21,476.06 717.6,482.04 627.25,474.37 627.25,488.8 605.28,509.86 533.52,494.65 462.67,540.28 466.83,586.3 425.49,570.7 390.91,500.63 363.09,491.27 346.19,509.08 321.75,493.87 291.33,437.32 200.98,440.7 135.98,397.67 90.35,391.69 37.18,337.61 0,189.15 55.77,58.24 55.77,3.38"/>
+
+
 				<g class="map-outline-points outline-points">
-					<circle cx="55.77" cy="3.38" r="1"></circle>
-					<circle cx="55.77" cy="58.24" r="1"></circle>
-					<circle cx="0" cy="189.15" r="1"></circle>
-					<circle cx="37.18" cy="337.61" r="1"></circle>
-					<circle cx="90.35" cy="391.69" r="1"></circle>
-					<circle cx="135.98" cy="397.67" r="1"></circle>
-					<circle cx="200.98" cy="440.7" r="1"></circle>
-					<circle cx="291.33" cy="437.32" r="1"></circle>
-					<circle cx="321.75" cy="493.87" r="1"></circle>
-					<circle cx="346.19" cy="509.08" r="1"></circle>
-					<circle cx="363.09" cy="491.27" r="1"></circle>
-					<circle cx="390.91" cy="500.63" r="1"></circle>
-					<circle cx="425.49" cy="570.7" r="1"></circle>
-					<circle cx="466.83" cy="586.3" r="1"></circle>
-					<circle cx="462.67" cy="540.28" r="1"></circle>
-					<circle cx="533.52" cy="494.65" r="1"></circle>
-					<circle cx="605.28" cy="509.86" r="1"></circle>
-					<circle cx="627.25" cy="488.8" r="1"></circle>
-					<circle cx="627.25" cy="474.37" r="1"></circle>
-					<circle cx="717.6" cy="482.04" r="1"></circle>
-					<circle cx="730.21" cy="476.06" r="1"></circle>
-					<circle cx="758.94" cy="500.63" r="1"></circle>
-					<circle cx="758.94" cy="520.91" r="1"></circle>
-					<circle cx="807.95" cy="579.15" r="1"></circle>
-					<circle cx="824.85" cy="571.48" r="1"></circle>
-					<circle cx="824.85" cy="529.36" r="1"></circle>
-					<circle cx="780.91" cy="456.69" r="1"></circle>
-					<circle cx="784.29" cy="417.04" r="1"></circle>
-					<circle cx="819.78" cy="386.62" r="1"></circle>
-					<circle cx="866.97" cy="319.15" r="1"></circle>
-					<circle cx="854.36" cy="294.84" r="1"></circle>
-					<circle cx="872.95" cy="205.14" r="1"></circle>
-					<circle cx="926.12" cy="168.87" r="1"></circle>
-					<circle cx="909.22" cy="152.75" r="1"></circle>
-					<circle cx="910.91" cy="118.17" r="1"></circle>
-					<circle cx="959.27" cy="80.99" r="1"></circle>
-					<circle cx="939.64" cy="60.84" r="1"></circle>
-					<circle cx="923.52" cy="26.13" r="1"></circle>
-					<circle cx="899.99" cy="31.2" r="1"></circle>
-					<circle cx="888.16" cy="86.97" r="1"></circle>
-					<circle cx="831.61" cy="107.25" r="1"></circle>
-					<circle cx="810.42" cy="133.38" r="1"></circle>
-					<circle cx="817.18" cy="147.68" r="1"></circle>
-					<circle cx="769.99" cy="162.11" r="1"></circle>
-					<circle cx="773.37" cy="173.94" r="1"></circle>
-					<circle cx="732.81" cy="210.99" r="1"></circle>
-					<circle cx="699.92" cy="208.52" r="1"></circle>
-					<circle cx="704.99" cy="186.55" r="1"></circle>
-					<circle cx="719.29" cy="186.55" r="1"></circle>
-					<circle cx="707.46" cy="150.28" r="1"></circle>
-					<circle cx="688.87" cy="167.18" r="1"></circle>
-					<circle cx="683.02" cy="159.51" r="1"></circle>
-					<circle cx="696.54" cy="146.9" r="1"></circle>
-					<circle cx="691.47" cy="125.84" r="1"></circle>
-					<circle cx="666.12" cy="118.17" r="1"></circle>
-					<circle cx="648.44" cy="144.3" r="1"></circle>
-					<circle cx="643.37" cy="178.1" r="1"></circle>
-					<circle cx="653.51" cy="193.31" r="1"></circle>
-					<circle cx="643.37" cy="217.75" r="1"></circle>
-					<circle cx="631.54" cy="218.66" r="1"></circle>
-					<circle cx="625.56" cy="195.91" r="1"></circle>
-					<circle cx="632.32" cy="124.15" r="1"></circle>
-					<circle cx="666.12" cy="113.1" r="1"></circle>
-					<circle cx="693.16" cy="114.01" r="1"></circle>
-					<circle cx="677.04" cy="100.49" r="1"></circle>
-					<circle cx="649.22" cy="96.2" r="1"></circle>
-					<circle cx="630.63" cy="106.34" r="1"></circle>
-					<circle cx="608.66" cy="86.06" r="1"></circle>
-					<circle cx="579.15" cy="108.03" r="1"></circle>
-					<circle cx="546.26" cy="112.32" r="1"></circle>
-					<circle cx="547.95" cy="102.18" r="1"></circle>
-					<circle cx="593.45" cy="75.92" r="1"></circle>
-					<circle cx="586.82" cy="69.29" r="1"></circle>
-					<circle cx="554.71" cy="73.45" r="1"></circle>
-					<circle cx="502.32" cy="50.7" r="1"></circle>
-					<circle cx="311.61" cy="44.72" r="1"></circle>
-					<circle cx="89.57" cy="0" r="1"></circle>
-					<circle cx="87.88" cy="24.44" r="1"></circle>
+					<circle cx="55.77" cy="3.38" r="1"/> <circle cx="55.77" cy="58.24" r="1"/> <circle cx="0" cy="189.15" r="1"/> <circle cx="37.18" cy="337.61" r="1"/> <circle cx="90.35" cy="391.69" r="1"/> <circle cx="135.98" cy="397.67" r="1"/> <circle cx="200.98" cy="440.7" r="1"/> <circle cx="291.33" cy="437.32" r="1"/> <circle cx="321.75" cy="493.87" r="1"/> <circle cx="346.19" cy="509.08" r="1"/> <circle cx="363.09" cy="491.27" r="1"/> <circle cx="390.91" cy="500.63" r="1"/> <circle cx="425.49" cy="570.7" r="1"/> <circle cx="466.83" cy="586.3" r="1"/> <circle cx="462.67" cy="540.28" r="1"/> <circle cx="533.52" cy="494.65" r="1"/> <circle cx="605.28" cy="509.86" r="1"/> <circle cx="627.25" cy="488.8" r="1"/> <circle cx="627.25" cy="474.37" r="1"/> <circle cx="717.6" cy="482.04" r="1"/> <circle cx="730.21" cy="476.06" r="1"/> <circle cx="758.94" cy="500.63" r="1"/> <circle cx="758.94" cy="520.91" r="1"/> <circle cx="807.95" cy="579.15" r="1"/> <circle cx="824.85" cy="571.48" r="1"/> <circle cx="824.85" cy="529.36" r="1"/> <circle cx="780.91" cy="456.69" r="1"/> <circle cx="784.29" cy="417.04" r="1"/> <circle cx="819.78" cy="386.62" r="1"/> <circle cx="866.97" cy="319.15" r="1"/> <circle cx="854.36" cy="294.84" r="1"/> <circle cx="872.95" cy="205.14" r="1"/> <circle cx="926.12" cy="168.87" r="1"/> <circle cx="909.22" cy="152.75" r="1"/> <circle cx="910.91" cy="118.17" r="1"/> <circle cx="959.27" cy="80.99" r="1"/> <circle cx="939.64" cy="60.84" r="1"/> <circle cx="923.52" cy="26.13" r="1"/> <circle cx="899.99" cy="31.2" r="1"/> <circle cx="888.16" cy="86.97" r="1"/> <circle cx="831.61" cy="107.25" r="1"/> <circle cx="810.42" cy="133.38" r="1"/> <circle cx="817.18" cy="147.68" r="1"/> <circle cx="769.99" cy="162.11" r="1"/> <circle cx="773.37" cy="173.94" r="1"/> <circle cx="732.81" cy="210.99" r="1"/> <circle cx="699.92" cy="208.52" r="1"/> <circle cx="704.99" cy="186.55" r="1"/> <circle cx="719.29" cy="186.55" r="1"/> <circle cx="707.46" cy="150.28" r="1"/> <circle cx="688.87" cy="167.18" r="1"/> <circle cx="683.02" cy="159.51" r="1"/> <circle cx="696.54" cy="146.9" r="1"/> <circle cx="691.47" cy="125.84" r="1"/> <circle cx="666.12" cy="118.17" r="1"/> <circle cx="648.44" cy="144.3" r="1"/> <circle cx="643.37" cy="178.1" r="1"/> <circle cx="653.51" cy="193.31" r="1"/> <circle cx="643.37" cy="217.75" r="1"/> <circle cx="631.54" cy="218.66" r="1"/> <circle cx="625.56" cy="195.91" r="1"/> <circle cx="632.32" cy="124.15" r="1"/> <circle cx="666.12" cy="113.1" r="1"/> <circle cx="693.16" cy="114.01" r="1"/> <circle cx="677.04" cy="100.49" r="1"/> <circle cx="649.22" cy="96.2" r="1"/> <circle cx="630.63" cy="106.34" r="1"/> <circle cx="608.66" cy="86.06" r="1"/> <circle cx="579.15" cy="108.03" r="1"/> <circle cx="546.26" cy="112.32" r="1"/> <circle cx="547.95" cy="102.18" r="1"/> <circle cx="593.45" cy="75.92" r="1"/> <circle cx="586.82" cy="69.29" r="1"/> <circle cx="554.71" cy="73.45" r="1"/> <circle cx="502.32" cy="50.7" r="1"/> <circle cx="311.61" cy="44.72" r="1"/> <circle cx="89.57" cy="0" r="1"/> <circle cx="87.88" cy="24.44" r="1"/>
 				</g>
 			</g>
-
-
-
-		</g>
-
-	
-		<g class="map-outline">
-			<!-- <path d="M55.77,3.38 55.77,58.24 0,189.15 37.18,337.61 90.35,391.69 135.98,397.67 200.98,440.7 291.33,437.32 321.75,493.87 346.19,509.08 363.09,491.27 390.91,500.63 425.49,570.7 466.83,586.3 462.67,540.28 533.52,494.65 605.28,509.86 627.25,488.8 627.25,474.37 717.6,482.04 730.21,476.06 758.94,500.63 758.94,520.91 807.95,579.15 824.85,571.48 824.85,529.36 780.91,456.69 784.29,417.04 819.78,386.62 866.97,319.15 854.36,294.84 872.95,205.14 926.12,168.87 909.22,152.75 910.91,118.17 959.27,80.99 939.64,60.84 923.52,26.13 899.99,31.2 888.16,86.97 831.61,107.25 810.42,133.38 817.18,147.68 769.99,162.11 773.37,173.94 732.81,210.99 699.92,208.52 704.99,186.55 719.29,186.55 707.46,150.28 688.87,167.18 683.02,159.51 696.54,146.9 691.47,125.84 666.12,118.17 648.44,144.3 643.37,178.1 653.51,193.31 643.37,217.75 631.54,218.66 625.56,195.91 632.32,124.15 666.12,113.1 693.16,114.01 677.04,100.49 649.22,96.2 630.63,106.34 608.66,86.06 579.15,108.03 546.26,112.32 547.95,102.18 593.45,75.92 586.82,69.29 554.71,73.45 502.32,50.7 311.61,44.72 89.57,0 87.88,24.44 55.77,3.38"> -->
-			<!-- 	<animate 
-					attributeName="d" 
-					from="M55.77,3.38 55.77,58.24 0,189.15 37.18,337.61 90.35,391.69 135.98,397.67 200.98,440.7 291.33,437.32 321.75,493.87 346.19,509.08 363.09,491.27 390.91,500.63 425.49,570.7 466.83,586.3 462.67,540.28 533.52,494.65 605.28,509.86 627.25,488.8 627.25,474.37 717.6,482.04 730.21,476.06 758.94,500.63 758.94,520.91 807.95,579.15 824.85,571.48 824.85,529.36 780.91,456.69 784.29,417.04 819.78,386.62 866.97,319.15 854.36,294.84 872.95,205.14 926.12,168.87 909.22,152.75 910.91,118.17 959.27,80.99 939.64,60.84 923.52,26.13 899.99,31.2 888.16,86.97 831.61,107.25 810.42,133.38 817.18,147.68 769.99,162.11 773.37,173.94 732.81,210.99 699.92,208.52 704.99,186.55 719.29,186.55 707.46,150.28 688.87,167.18 683.02,159.51 696.54,146.9 691.47,125.84 666.12,118.17 648.44,144.3 643.37,178.1 653.51,193.31 643.37,217.75 631.54,218.66 625.56,195.91 632.32,124.15 666.12,113.1 693.16,114.01 677.04,100.49 649.22,96.2 630.63,106.34 608.66,86.06 579.15,108.03 546.26,112.32 547.95,102.18 593.45,75.92 586.82,69.29 554.71,73.45 502.32,50.7 311.61,44.72 89.57,0 87.88,24.44 55.77,3.38" 
-					to="M0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 0,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,500 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0 500,0" 
-					dur="3s" 
-					repeatCount="indefinite">
-				</animate> -->
-			</path>
-
-
-		</g>
-		
-
-
-		<g class="map-locations">
-			<!-- template we use for locations -->
-			<g class="map-location map-location-template">
-
-
-				<g class="map-location-marker">
-					<circle class="location-dot" cx="0" cy="0" r="0"/>
-					<rect x="-10" y="-10" width="20" height="20" fill-opacity="0"/>
-				</g>
-
-				<g class="map-location-hover">
-
-					<g class="map-location-hover-content" transform="translate(-20,-15)">
-
-						<rect class="map-location-box map-location-bg" x="0" y="-44" width="163" height="44"/>
-						<path class="map-location-bg" d="M25,5 45,-5 31,-10"/>
-
-						<g class="map-location-text-container" transform="translate(10,-15)">
-
-							<defs>
-			          <clipPath id="map-location-mask">
-			            <rect class="map-location-mask-rect" x="0" y="-27" width="300" height="44"/>
-			          </clipPath>
-			        </defs>
-
-							<g class="map-location-text" clip-path="url(#map-location-mask)">
-
-								<text x="0" y="2" class="map-text-location" font-family="CubanoRegular">NEW YORK, NY</text>
-
-								<g class="map-location-event map-location-event-template">
-									<text x="0" y="0">
-										<tspan x="0" dy="1.2em" class="map-location-venue" font-family="blanchcaps"><!-- venue --></tspan>
-										<tspan x="0" dy="1.6em" class="map-location-date" font-family="Verdana"><!-- date and time --></tspan>
-									</text>
-									<a class="map-location-info" xlink:href="http://www.facebook.com/alovelikepi" target="_blank">
-										<rect x="0" y="60" width="80" height="30"/>
-						     		<text x="10" y="81" font-family="blanchcaps">MORE INFO</text>
-						    	</a>
-								</g>
-
+			<g class="map-locations">
+				<!-- start location template -->
+				<g class="map-location map-location-template">
+					<g class="map-location-marker">
+						<circle class="location-dot" cx="0" cy="0" r="0"/>
+						<rect x="-10" y="-10" width="20" height="20" fill-opacity="0"/>
+					</g>
+					<g class="map-location-hover">
+						<g class="map-location-hover-content" transform="translate(-20,-15)">
+							<rect class="map-location-box map-location-bg" x="0" y="-44" width="163" height="44"/>
+							<path class="map-location-bg" d="M25,5 45,-5 31,-10"/>
+							<g class="map-location-text-container" transform="translate(10,-15)">
+								<defs>
+				          <clipPath id="map-location-mask">
+				            <rect class="map-location-mask-rect" x="0" y="-27" width="300" height="44"/>
+				          </clipPath>
+				        </defs>
+				        <g class="map-location-text" clip-path="url(#map-location-mask)">
+				        	<text x="0" y="2" class="map-text-location" font-family="CubanoRegular"><!-- location --></text>
+				        	<g class="map-location-event map-location-event-template">
+										<text x="0" y="0">
+											<tspan x="0" dy="1.2em" class="map-location-venue" font-family="blanchcaps"><!-- venue --></tspan>
+											<tspan x="0" dy="1.6em" class="map-location-date" font-family="Verdana"><!-- date and time --></tspan>
+										</text>
+										<a class="map-location-info" xlink:href="http://www.facebook.com/alovelikepi" target="_blank">
+											<rect x="0" y="60" width="80" height="30"/>
+							     		<text x="10" y="81" font-family="blanchcaps">MORE INFO</text>
+							    	</a>
+									</g>
+				        </g>
 							</g>
-
 						</g>
-
 					</g>
-
-
-
-					</g>
-
 				</g>
+				<!-- end location template -->
 			</g>
+		</g>
 
-			<g class="table-view">
-				
+		<!-- table state -->
 
-				<g class="table-view-container" transform="translate(0,60)">
+		<g class="table-state">
+			<g class="table-state-content" transform="translate(0,60)">
+				<defs>
+          <clipPath id="table-mask">
+            <path d="M0,0 900,-100 850,600 50,525 0,0"/>
+          </clipPath>
+        </defs>
 
-					<defs>
-	          <clipPath id="table-mask">
-	          	<!-- path is identical to .table-view-shape -->
-	            <path d="M0,0 900,-100 850,600 50,525 0,0"/>
-	          </clipPath>
-	        </defs>
-
-					<path class="table-view-shape" stroke-width="3" fill="#162230" stroke-miterlimit="10" d="M0,0 900,-100 850,600 50,525 0,0"/>
-					<g class="table-view-content" clip-path="url(#table-mask)">
-						<g class="table-view-content-container" transform="translate(0,70)">
-							<!-- <g class="table-view-row">
-								<rect x="0" y="0" width="100%" height="42"/>
-								<text x="80" y="28" class="table-date">10/11</text>
-								<text x="160" y="28" class="table-location">New York, NY</text>
-								<text x="280" y="28" class="table-venue">BOWERY ELECTRIC</text>
-								<text x="550" y="28" class="table-time">8:30</text>
-								<g class="table-info" transform="translate(700,7)">
-									<rect x="0" y="0" width="80" height="26"/>
+        
+        <rect class="table-bg" fill="#FFF" clip-path="url('#table-mask')" x="0" y="-100" width="900" height="900"/>
+        <g class="table-content" clip-path="url(#table-mask)">
+					<g class="table-content-container" transform="translate(0,70)">
+						<g class="table-row table-row-template">
+							<g class="table-row-content">
+								<rect x="0" y="0" width="100%" height="42" class="table-row-bg"/>
+								<text x="80" y="28" class="table-row-date">10/11</text>
+								<text x="160" y="28" class="table-row-location">New York, NY</text>
+								<text x="340" y="28" class="table-row-venue">BOWERY ELECTRIC</text>
+								<text x="580" y="28" class="table-row-time">8:30</text>
+								<g class="table-row-info" transform="translate(700,7)">
+									<rect class="table-row-info-bg" x="0" y="0" width="80" height="26"/>
 									<text x="10" y="20">MORE INFO</text>
 								</g>
-							</g> -->
-						</g>
-					</g>
-					<path class="table-view-outline" fill="none" stroke-miterlimit="10" d="M0,0 900,-100 850,600 50,525 0,0"/>
-
-				</g>
-			</g>
-
-			<g class="map-outline-points">
-
-				<!-- map points -->
-
-				
-
-				<!-- table points -->
-
-				<circle cx="1" cy="61" r="2"></circle>
-				<circle cx="899" cy="-39" r="2"></circle>
-				<circle cx="850" cy="660" r="2"></circle>
-				<circle cx="50" cy="585" r="2"></circle>
-
-			</g>
-
-			<g class="map-header">
-				<g class="map-header-container" transform="translate(720,50)">
-					<text class="map-header-text" x="0" y="0" font-family="blanchcaps">TOUR</text>
-					<g class="map-header-toggle" transform="translate(0,15)">
-						<g class="map-header-toggle-item toggle-map" transform="scale(1) translate(4,0)">
-							<path fill="#C0326B" d="M2,0h28.2c1.1,0,2,0.9,2,2v13.3c0,1.1-0.9,2-2,2H6.5L1.9,21C1.1,21.6,0,21.1,0,20.1V2C0,0.9,0.9,0,2,0z"/>
-						</g>
-						<g class="map-header-toggle-item toggle-list" transform="scale(1) translate(50,0)">
-							<path fill="#2D5C66" d="M3.5,13.1H1.4c-0.7,0-1.4-0.6-1.4-1.4V9.6c0-0.7,0.6-1.4,1.4-1.4h2.2c0.7,0,1.4,0.6,1.4,1.4v2.2 C4.9,12.5,4.3,13.1,3.5,13.1z"/>
-							<path fill="#2D5C66" d="M34.6,13.1H9.8c-0.7,0-1.4-0.6-1.4-1.4V9.6c0-0.7,0.6-1.4,1.4-1.4h24.8c0.7,0,1.4,0.6,1.4,1.4v2.2 C36,12.5,35.3,13.1,34.6,13.1z"/>
-							<path fill="#2D5C66" d="M3.5,4.9H1.4C0.6,4.9,0,4.3,0,3.5V1.4C0,0.6,0.6,0,1.4,0h2.2c0.7,0,1.4,0.6,1.4,1.4v2.2 C4.9,4.3,4.3,4.9,3.5,4.9z"/>
-							<path fill="#2D5C66" d="M34.6,4.9H9.8C9,4.9,8.4,4.3,8.4,3.5V1.4C8.4,0.6,9,0,9.8,0h24.8C35.3,0,36,0.6,36,1.4v2.2 C36,4.3,35.3,4.9,34.6,4.9z"/>
-							<path fill="#2D5C66" d="M3.5,21.3H1.4C0.6,21.3,0,20.7,0,20v-2.2c0-0.7,0.6-1.4,1.4-1.4h2.2c0.7,0,1.4,0.6,1.4,1.4V20 C4.9,20.7,4.3,21.3,3.5,21.3z"/>
-							<path fill="#2D5C66" d="M34.6,21.3H9.8c-0.7,0-1.4-0.6-1.4-1.4v-2.2c0-0.7,0.6-1.4,1.4-1.4h24.8c0.7,0,1.4,0.6,1.4,1.4V20 C36,20.7,35.3,21.3,34.6,21.3z"/>
+							</g>
 						</g>
 					</g>
 				</g>
+				<g class="table-outline">
+					<path class="table-outline-shape" d="M0,0 900,-100 850,600 50,525 0,0"/>
+					<g class="table-outline-points outline-points">
+						<circle cx="1" cy="1" r="2"></circle>
+						<circle cx="899" cy="-99" r="2"></circle>
+						<circle cx="850" cy="601" r="2"></circle>
+						<circle cx="50" cy="525" r="2"></circle>
+					</g>
+				</g>
+        
 			</g>
-
-
-
-			<!-- <rect class="btn-dummy" x="100" y="100" width="50" height="30" fill="#c0326b"/> -->
-
 		</g>
+
+		<!-- map header -->
+
+		<g class="map-header">
+			<g class="map-header-container" transform="translate(720,50)">
+				<text class="map-header-text" x="0" y="0" font-family="blanchcaps">TOUR</text>
+				<g class="map-header-toggle" transform="translate(0,15)">
+					<g class="map-header-toggle-item toggle-map" transform="scale(1) translate(4,0)">
+						<path d="M2,0h28.2c1.1,0,2,0.9,2,2v13.3c0,1.1-0.9,2-2,2H6.5L1.9,21C1.1,21.6,0,21.1,0,20.1V2C0,0.9,0.9,0,2,0z"/>
+					</g>
+					<g class="map-header-toggle-item toggle-table" transform="scale(1) translate(50,0)">
+						<path d="M3.5,13.1H1.4c-0.7,0-1.4-0.6-1.4-1.4V9.6c0-0.7,0.6-1.4,1.4-1.4h2.2c0.7,0,1.4,0.6,1.4,1.4v2.2 C4.9,12.5,4.3,13.1,3.5,13.1z"/>
+						<path d="M34.6,13.1H9.8c-0.7,0-1.4-0.6-1.4-1.4V9.6c0-0.7,0.6-1.4,1.4-1.4h24.8c0.7,0,1.4,0.6,1.4,1.4v2.2 C36,12.5,35.3,13.1,34.6,13.1z"/>
+						<path d="M3.5,4.9H1.4C0.6,4.9,0,4.3,0,3.5V1.4C0,0.6,0.6,0,1.4,0h2.2c0.7,0,1.4,0.6,1.4,1.4v2.2 C4.9,4.3,4.3,4.9,3.5,4.9z"/>
+						<path d="M34.6,4.9H9.8C9,4.9,8.4,4.3,8.4,3.5V1.4C8.4,0.6,9,0,9.8,0h24.8C35.3,0,36,0.6,36,1.4v2.2 C36,4.3,35.3,4.9,34.6,4.9z"/>
+						<path d="M3.5,21.3H1.4C0.6,21.3,0,20.7,0,20v-2.2c0-0.7,0.6-1.4,1.4-1.4h2.2c0.7,0,1.4,0.6,1.4,1.4V20 C4.9,20.7,4.3,21.3,3.5,21.3z"/>
+						<path d="M34.6,21.3H9.8c-0.7,0-1.4-0.6-1.4-1.4v-2.2c0-0.7,0.6-1.4,1.4-1.4h24.8c0.7,0,1.4,0.6,1.4,1.4V20 C36,20.7,35.3,21.3,34.6,21.3z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+
 	</g>
 </svg>

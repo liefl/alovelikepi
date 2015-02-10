@@ -1,0 +1,38 @@
+.media {
+
+  .slab {
+
+    cursor: pointer;
+
+    .slab-face {
+
+      fill: #D01B68;
+      stroke: #FFF;
+      stroke-width: 3;
+      stroke-miterlimit: 3;
+
+    }
+
+    .slab-outline {
+
+      fill: none;
+      stroke: #FFF;
+      stroke-width: 3;
+      stroke-miterlimit: 3;
+      stroke-opacity: 0;
+
+    }
+
+    &:hover {
+
+      .slab-outline {
+
+        stroke-opacity: 1;
+
+      }
+
+    }
+
+  }
+
+}

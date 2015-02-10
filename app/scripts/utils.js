@@ -88,3 +88,100 @@ function mapTourHeader() {
 
 }
 
+function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+function turnGroupsToPointTransform(path) {
+
+  Snap.load(path, function(f) {
+
+    var g = f.select('g');
+    var groups = g.selectAll('g');
+
+    for(var i=0; i < groups.length; i++) {
+
+      var paths = groups[i].selectAll('path');
+      var values = [];
+
+      for(var j=0; j < paths.length; j++) {
+        values.push(paths[j].attr('d'));
+      }
+
+      var animationHTML = '<path><animate';
+      animationHTML += ' attributeName="d"';
+      animationHTML += ' values="' + values.join(';') + '"';
+      animationHTML += ' dur="5s"';
+      animationHTML += ' begin="' + i * 0.3 + 's"';
+      animationHTML += ' keyTimes="0; 0.3; 1"'
+      animationHTML += ' repeatCount="indefinite"';
+      animationHTML += '/></path>';
+      console.log(animationHTML);
+
+    }
+
+    
+
+       
+
+  });
+}
+
+function splitPathIntoSections(path) {
+
+  var ar = path.split(' ');
+  var html = '';
+
+  for(var i=0; i < ar.length; i++) {
+    html += '<path d="M' + ar[i] + ' ' + ar[i+1] + '"/>\n'; 
+  }
+
+  console.log(html);
+
+}
+
+function animateRocks(node) {
+
+  var html = '';
+
+  $(node).find('.rocks').find('*').each(function(idx, el) {
+
+    var depth = 15;
+    var outerHTML = el.outerHTML.split('>');
+
+    html += outerHTML[0] + '>\n';
+
+    var animation = '  <animateTransform\n';
+    animation += '    attributeName="transform"\n';
+    animation += '    attributeType="XML"\n';
+    animation += '    type="translate"\n';
+    animation += '    from="0 ' + depth + '"\n';
+    animation += '    to="0 ' + depth + '"\n';
+    animation += '    dur="4.5s"\n';
+    animation += '    begin="0s"\n';
+    animation += '    keySplines="0.455 0.030 0.515 1; 0.455 0.030 0.515 1;"\n';
+    animation += '    values="0 ' + depth + ';0 -' + depth + ';0 ' + depth + '"\n';
+    animation += '    calcMode="spline"\n';
+    animation += '    repeatCount="indefinite"/>\n';
+
+    html += animation;
+    html += outerHTML[1] + '>\n';            
+                                                       
+    //$(el).html(animation);
+
+
+    
+
+
+  });
+
+  console.log(html);
+}
+

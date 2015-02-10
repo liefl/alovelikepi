@@ -2,6 +2,13 @@
 
   .map-outline {
 
+    .map-outline-points {
+
+      fill: #FFF;
+      opacity: 0;
+
+    }
+
     .map-outline-shape {
 
       stroke: #FFF;
@@ -11,16 +18,213 @@
       fill-opacity: 0;
       stroke-miterlimit: 10;
       stroke-dasharray: 3689.630126953125;
-      stroke-dashoffset: -3689.630126953125;
+      stroke-dashoffset: 3689.630126953125;
 
     }
 
-    .map-outline-points {
+  }
 
+  .map-locations {
+
+    .map-location {
+
+      &.template {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
+.table-state {
+
+  pointer-events: none;
+
+  .table-outline {
+
+    .table-outline-points {
       fill: #FFF;
+    }
+
+    .table-outline-shape {
+
+      stroke: #FFFFFF;
+      stroke-width: 3;
+      stroke-miterlimit: 10;
+      stroke-opacity: 0.4;
+      fill: none;
+      stroke-dasharray: 2938.20556640625;
+      stroke-dashoffset: 2938.20556640625;
 
     }
 
+  }
+
+  .table-content-container {
+
+    font-size: 24px;
+    font-family: 'blanchcaps';
+    fill: #FFF;
+
+    .table-row {
+
+      .table-row-content {
+        opacity: 0;
+
+      }
+
+      .table-row-bg {
+        fill: #1f2f42;
+      }
+
+      .table-row-info-bg {
+        fill: $pink;
+      }
+
+      .table-row-date {
+        font-size: 18px;
+        font-family: "CubanoRegular";
+      }
+
+    }
+
+    > g:nth-child(even) {
+      .table-row-bg {
+        fill: #162230;
+      }
+    }
+
+  }
+
+  .table-bg {
+
+    fill: #162230;
+    fill-opacity: 0;
+
+  }
+
+
+
+}
+
+.map-header {
+
+  .map-header-toggle-item {
+
+    cursor: pointer;
+    transition: all 0.3s;
+    fill: #2D5C66;
+
+  }
+
+}
+
+// states
+
+.shows-state {
+
+  .toggle-map { fill: $pink; }
+
+  .map-outline-shape {
+
+    stroke-dashoffset: 0 !important;
+    transition: all 2s 0.6s linear;
+    animation: mapflash 1s 2.6s forwards;
+
+  }
+
+}
+
+.shows-table-state {
+
+  .table-state {
+
+    pointer-events: all;
+
+  }
+
+  .toggle-table {
+    fill: $pink;
+  }
+
+  .toggle-map {
+    fill: #2D5C66;
+  }
+
+  .table-outline-shape {
+
+    stroke-dashoffset: 0 !important;
+    transition: all 1s linear;
+    animation: tableLineFlash 1s 1s forwards;
+
+  }
+
+  .map-state {
+
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    
+
+  }
+
+  .table-bg {
+    animation: tableFlash 1s 1s forwards;
+  }
+
+}
+
+// animations
+
+@keyframes mapflash {
+
+  0% {
+    stroke-opacity: 0.4;
+    fill-opacity: 0;
+  }
+
+  20% {
+    stroke-opacity: 0.8;
+    fill-opacity: 0.9;
+  }
+
+  100% {
+    stroke-opacity: 0.4;
+    fill-opacity: 0.6;
+  }
+
+}
+
+@keyframes tableLineFlash {
+
+  0% {
+    stroke-opacity: 0.4;
+  }
+
+  20% {
+    stroke-opacity: 0.8;
+  }
+
+  100% {
+    stroke-opacity: 0.4;
+  }
+
+}
+
+@keyframes tableFlash {
+
+  0% {
+    fill-opacity: 0;
+  }
+
+  20% {
+    fill-opacity: 1;
+  }
+
+  100% {
+    fill-opacity: 1;
   }
 
 }
