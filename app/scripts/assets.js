@@ -133,6 +133,7 @@ JATT.Assets = (function() {
       JATT.elements['stars'].append(JATT.elements['map']);
       JATT.elements['cliff'].append(JATT.elements['jack']);
 
+
       // return success
 
       dfd.resolve();

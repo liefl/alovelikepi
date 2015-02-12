@@ -5,18 +5,25 @@
 @import "colors";
 @import "map";
 @import "media";
+@import "news";
+@import "nav";
 
 
-nav {
+@font-face {
+    font-family: 'blanchcaps';
+    src: url('../fonts/blanch_caps-webfont.eot');
+    src: url('../fonts/blanch_caps-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/blanch_caps-webfont.woff2') format('woff2'),
+         url('../fonts/blanch_caps-webfont.woff') format('woff'),
+         url('../fonts/blanch_caps-webfont.ttf') format('truetype'),
+         url('../fonts/blanch_caps-webfont.svg#blanchcaps') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-  position: fixed;
-  top: 0; left: 0;
-  width: 250px; height: 100%;
-  background: #f0ffb4;
-  z-index: 100;
-  transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  transform: translate3d(-250px,0,0);
+body {
 
+  font-family: 'blanchcaps';
 }
 
 #fade {
@@ -38,76 +45,12 @@ nav {
   margin: -1000px 0 0 -1500px;
   background: #1f2f42;
 
-  // .location {
+  .big-star {
 
-  //   position: absolute;
-
-  //   .location-content {
-
-  //     position: absolute;
-  //     overflow: hidden;
-  //     bottom: 0;
-  //     width: 400px;
-
-  //   }
-
-  //   .location-box {
-
-  //     position: relative;
-  //     display: inline-block;
-  //     overflow: hidden;
-  //     background: #162230;
-  //     color: #FFF;
-  //     padding: 10px;
-  //     // transform: translate3d(-100%,0,0);
-
-  //   }
-
-  //   .location-text {
-
-  //     .location-city {
-  //       font-family: 'CubanoRegular';
-  //       font-size: 22px;
-  //       display: inline-block;
-  //     }
-
-  //     .location-venue {
-  //       font-family: 'blanchcaps';
-  //       font-size: 28px;
-  //     }
-
-  //     .location-date {
-  //       font-family: 'Verdana';
-  //       font-size: 11px;
-  //     }
-
-  //     .location-info {
-  //       display: inline-block;
-  //       font-family: 'blanchcaps';
-  //       font-size: 22px;
-  //       background: #c0326b;
-  //       padding: 5px 11px;
-  //       margin-top: 6px;
-  //       color: #FFF !important;
-  //     }
-
-  //     .location-show {
-  //       margin: 8px 0;
-  //     }
-
-  //   }
-
-  //   &:hover {
+    fill: #FFF;
+  }
 
 
-  //     .location-box {
-
-  //       max-height: 120px;
-  //     }
-  //   }
-
-   
-  // }
 
   // dialogue
 
@@ -144,6 +87,8 @@ nav {
     opacity: 0.7;
 
   }
+
+
 
   .map {
 
@@ -281,60 +226,7 @@ nav {
 
   }
 
-  // states
 
-  // &.shows {
-
-  //   .map {
-
-  //     .map-outline {
-
-  //       > path {
-
-  //         stroke-dashoffset: 0 !important;
-  //         animation: mapflash 1s 2.5s forwards;
-
-  //       }
-
-  //     }
-
-  //     .map-outline-points {
-
-  //       opacity: 1;
-
-  //     }
-
-
-
-  //   }
-
-  //   .trace-points circle {
-
-  //     fill-opacity: 1;
-
-  //   }
-
-  // }
-
-  // &.table-state {
-
-  //   .table-view-outline {
-
-  //     transition: all 0.5s 0.5s;
-  //     stroke-dashoffset: 0 !important;
-
-  //   }
-
-  //   .table-view-shape {
-  //     fill-opacity: 1 !important;
-  //     transition: all 0.4s 1s;
-  //   }
-
-  //   .map-outline, .map-locations {
-  //     transition: all 0.4s;
-  //     opacity: 0 !important;
-  //   }
-  // }
 
 }
 
@@ -385,22 +277,7 @@ nav {
     fill: #eadd9c;
   }
 
-  // map
-
-  
-
 }
-
-
-body.nav-open {
-  nav {
-    transform: translate3d(0,0,0);
-  }
-}
-
-
-
-// nav 
 
 
 
@@ -470,48 +347,107 @@ body.nav-open {
 
 
 
+#jackandthegiantsvg {
 
-.scarf {
+  // jack 
 
-  fill: none;
-  stroke: #c0326b;
-  stroke-width: 3px;
-  stroke-linecap: round;
+  .jack {
+
+    cursor: pointer;
+
+    .body {
+
+      
+    }
+
+    .body-glow {
+
+      opacity: 0;
+      transition: all 0.3s;
+
+    }
+
+    .scarf {
+
+      fill: none;
+      stroke: #c0326b;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      transition: stroke 0.3s;
+
+    }
+
+    .particles {
+
+      opacity: 0.7;
+
+    }
+
+    .particle {
+
+      
+      transition: all 0.3s;
+
+    }
+
+    &:hover {
+
+      .scarf {
+
+        stroke: #dd4592;
+
+      }
+
+      .body-glow {
+
+        opacity: 0.7;
+
+      }
+
+      .particle {
+
+        opacity: 1;
+        transform: scale(1.7);
+
+      }
+
+    }
+
+  }
+
+  // giant
+
+  .giant {
+
+    .fairy {
+
+      fill: #FFF;
+      cursor: pointer;
+
+    }
+
+    .heart {
+
+      cursor: pointer;
+
+      .heart-shape-2 {
+
+        opacity: 0;
+        transition: opacity 0.3s ;
+
+      }
+
+      &:hover {
+
+        .heart-shape-2 {
+          opacity: 1;
+        }
+
+      }
+
+    }
+
+  }
 
 }
 
-
-#test {
-
-  position: fixed;
-  top: -600px; left: 0;
-  z-index:999;
-
-  path {
-    fill: #FFFFFF;
-  }
-}
-
-// animations
-
-@keyframes mapflash {
-  0% {
-    stroke-opacity: 0.4;
-    fill-opacity: 0;
-  }
-
-  20% {
-    stroke-opacity: 1;
-    fill-opacity: 0.9;
-  }
-  100% {
-    stroke-opacity: 0.6;
-    fill-opacity: 0.7;
-  }
-}
-
-@keyframes dash-animation {
-  to {
-    stroke-dashoffset: 1000;
-  }
-}

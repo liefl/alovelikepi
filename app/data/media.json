@@ -4,7 +4,49 @@
       {
         "type": "image",
         "thumb": "images/test.jpg",
-        "url": "images/test.jpg",
+        "url": "images/large.jpg",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/large.jpg",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/large.jpg",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/large.jpg",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "video",
+        "thumb": "images/test.jpg",
+        "url": "<iframe width='100%'' height='100%' src='https://www.youtube.com/embed/XUYu9rLjgws?autoplay=1&modestbranding=1&controls=0&showinfo=0&rel=0' frameborder='0' allowfullscreen></iframe>",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/large.jpg",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/large.jpg",
+        "caption": "caption goes here"
+      },
+      {
+        "type": "image",
+        "thumb": "images/test.jpg",
+        "url": "images/large.jpg",
         "caption": "caption goes here"
       }
     ]

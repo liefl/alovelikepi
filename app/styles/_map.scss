@@ -1,5 +1,7 @@
 .map-state {
 
+  transition: opacity 0.3s;
+
   .map-outline {
 
     .map-outline-points {
@@ -19,6 +21,7 @@
       stroke-miterlimit: 10;
       stroke-dasharray: 3689.630126953125;
       stroke-dashoffset: 3689.630126953125;
+      transition: stroke-dashoffset 0.6s linear;
 
     }
 
@@ -41,8 +44,12 @@
 .table-state {
 
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
 
   .table-outline {
+
+    pointer-events: none;
 
     .table-outline-points {
       fill: #FFF;
@@ -71,7 +78,7 @@
     .table-row {
 
       .table-row-content {
-        opacity: 0;
+       
 
       }
 
@@ -88,6 +95,10 @@
         font-family: "CubanoRegular";
       }
 
+      &.table-row-template {
+        display: none;
+      }
+
     }
 
     > g:nth-child(even) {
@@ -95,6 +106,8 @@
         fill: #162230;
       }
     }
+
+
 
   }
 
@@ -121,6 +134,25 @@
 
 }
 
+.btn-info {
+        
+  rect {
+    fill: #c0326b;
+    transition: all 0.3s;
+  }
+
+  text {
+    fill: #FFF !important;
+  }
+
+  &:hover {
+    rect {
+      fill: #cb648e !important;
+    }
+  }
+
+}
+
 // states
 
 .shows-state {
@@ -130,7 +162,7 @@
   .map-outline-shape {
 
     stroke-dashoffset: 0 !important;
-    transition: all 2s 0.6s linear;
+    transition: stroke-dashoffset 2s 0.6s linear !important;
     animation: mapflash 1s 2.6s forwards;
 
   }
@@ -142,6 +174,7 @@
   .table-state {
 
     pointer-events: all;
+    opacity: 1;
 
   }
 
@@ -156,16 +189,14 @@
   .table-outline-shape {
 
     stroke-dashoffset: 0 !important;
-    transition: all 1s linear;
-    animation: tableLineFlash 1s 1s forwards;
+    transition: all 0.6s linear;
+    animation: tableLineFlash 1s 0.6s forwards;
 
   }
 
   .map-state {
 
     opacity: 0;
-    transition: opacity 0.3s;
-
     
 
   }

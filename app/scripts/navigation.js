@@ -2,12 +2,285 @@ var JATT = JATT || {};
 
 JATT.Navigation = (function() {
 
-  this.state = 'home';
+  var current = 'home';
+
+  var states = {
+
+    home: {
+
+      enter: function() {
+
+      },
+
+      leave: function() {
+
+        var d = new $.Deferred();
+        d.resolve();
+        return d.promise();
+
+      }
+
+    },
+
+    news: {
+
+      enter: function() {
+
+        var duration = duration || 2.5;
+        var easing = Quint.easeInOut;
+
+        TweenMax.to(JATT.elements['cliff'].node, duration, {
+          x: -4300,
+          y: 0,
+          scale: 3,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['mountains'].node, duration, {
+          x: -350,
+          y: 0,
+          scale: 1.3,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['mountains2'].node, duration, {
+          x: -50,
+          scale: 1.1,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['giant'].node, duration, {
+          x: 500,
+          y: -150,
+          scale: 1.4,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud6'].node, duration, {
+          x: 600,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud5'].node, duration, {
+          x: 100,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud4'].node, duration, {
+          x: 200,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud3'].node, duration, {
+          x: 300,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud2'].node, duration, {
+          x: 400,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud1'].node, duration, {
+          x: 500,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['stars'].node, duration, {
+          x: 100,
+          ease: easing
+        });
+
+        // timeline
+
+        TweenMax.to(JATT.c, duration * 0.6, {
+          x: 0,
+          onComplete: JATT.News.init
+        });
+
+      },
+
+      leave: function() {
+
+        var d = new $.Deferred();
+
+        JATT.News.hide();
+
+        clear(0.8).then(d.resolve);
+
+        return d.promise();
+
+      }
+
+    },
+
+    shows: {
+
+      enter: function(duration) {
+
+        var duration = duration || 2.5;
+        var easing = Quint.easeInOut;
+
+        TweenMax.to(JATT.elements['cliff'].node, duration, {
+          y: 1100
+        });
+
+        TweenMax.to(JATT.elements['mountains'].node, duration, {
+          y: 850
+        });
+
+        TweenMax.to(JATT.elements['mountains2'].node, duration, {
+          y: 800
+        });
+
+        TweenMax.to(JATT.elements['giant'].node, duration, {
+          y: 850
+        });
+
+        TweenMax.to(JATT.elements['giant'].select('.fairy'), duration, {
+          y: -1000
+        });
+
+        TweenMax.to(JATT.elements['cloud6'].node, duration, {
+          y: 950
+        });
+
+        TweenMax.to(JATT.elements['cloud5'].node, duration, {
+          y: 850
+        });
+
+        TweenMax.to(JATT.elements['cloud4'].node, duration, {
+          y: 750
+        });
+
+        TweenMax.to(JATT.elements['cloud3'].node, duration, {
+          y: 650
+        });
+
+        TweenMax.to(JATT.elements['cloud2'].node, duration, {
+          y: 550
+        });
+
+        TweenMax.to(JATT.elements['cloud1'].node, duration, {
+          y: 450
+        });
+
+        TweenMax.to(JATT.elements['stars'].node, duration, {
+          y: 250
+        });
+
+        // timeline
+
+        TweenMax.to(JATT.c, duration * 0.1, {
+          x: 0,
+          onComplete: JATT.Shows.init
+        });
+
+      },
+
+      leave: function(duration) {
+
+        var d = new $.Deferred();
+
+        JATT.Shows.hide();
+
+        clear(0.8).then(d.resolve);
+
+        return d.promise();
+
+      }
+
+    },
+
+    media: {
+
+      enter: function(duration) {
+
+        var duration = duration || 2.5;
+        var easing = Quint.easeOut;
+
+        TweenMax.to(JATT.elements['cliff'].node, duration, {
+          x: -2100,
+          y: 100,
+          scale: 2
+        });
+
+        TweenMax.to(JATT.elements['giant'].node, duration, {
+          y: -100,
+          x: -50,
+          scale: 1.4,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['mountains'].node, duration, {
+          x: -1200,
+          y: 200,
+          scale: 1.8,
+        });
+
+        TweenMax.to(JATT.elements['mountains2'].node, duration, {
+          x: -750,
+          y: 150,
+          scale: 1.5,
+        });
+
+        TweenMax.to(JATT.elements['cloud6'].node, duration, {
+          y: 150,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud5'].node, duration, {
+          y: 100,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud4'].node, duration, {
+          y: 0,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud3'].node, duration, {
+          y: -50,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud2'].node, duration, {
+          y: -75,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['cloud1'].node, duration, {
+          y: -125,
+          ease: easing
+        });
+
+        TweenMax.to('#fade', 1.5, {
+          opacity: 1,
+          onComplete: JATT.Media.init
+        });
+
+      },
+
+      leave: function(duration) {
+
+        var d = new $.Deferred();
+
+        JATT.Media.hide();
+
+        clear(0.8, 0.5).then(d.resolve);
+
+        return d.promise();
+
+      }
+
+    }
+
+  };
 
   var intro = function() {
 
     var duration = 5;
-    var easing = Quint.EaseOut;
+    var easing = Quint.easeInOut;
 
     TweenMax.from(JATT.elements['cliff'].node, duration, {
       y: 1800,
@@ -64,95 +337,65 @@ JATT.Navigation = (function() {
       ease: easing
     });
 
-  };
-
-  var media = function() {
-
-    this.state = 'media';
-
-    var duration = 2.5;
-    var easing = Quint.EaseInOut;
-
-    TweenMax.to(JATT.elements['cliff'].node, duration, {
-      x: -2100,
-      y: 100,
-      scale: 2
-    });
-
-    TweenMax.to(JATT.elements['giant'].node, duration, {
-      y: -100,
-      x: -50,
-      scale: 1.4,
-      ease: easing
-    });
-
-    TweenMax.to(JATT.elements['mountains'].node, duration, {
-      x: -1200,
-      y: 200,
-      scale: 1.8,
-    });
-
-    TweenMax.to(JATT.elements['mountains2'].node, duration, {
-      x: -750,
-      y: 150,
-      scale: 1.5,
-    });
-
-    TweenMax.to(JATT.elements['cloud6'].node, duration, {
-      y: 150,
-      ease: easing
-    });
-
-    TweenMax.to(JATT.elements['cloud5'].node, duration, {
-      y: 100,
-      ease: easing
-    });
-
-    TweenMax.to(JATT.elements['cloud4'].node, duration, {
-      y: 0,
-      ease: easing
-    });
-
-    TweenMax.to(JATT.elements['cloud3'].node, duration, {
-      y: -50,
-      ease: easing
-    });
-
-    TweenMax.to(JATT.elements['cloud2'].node, duration, {
-      y: -75,
-      ease: easing
-    });
-
-    TweenMax.to(JATT.elements['cloud1'].node, duration, {
-      y: -125,
-      ease: easing
-    });
-
-    TweenMax.to('#fade', 1.5, {
-      opacity: 1,
-      onComplete: function() {
-        JATT.Media.init();
-      }
+    TweenMax.to('#fade', 2, {
+      opacity: 0
     });
 
   };
 
-  var home = function() {
+  var clear = function(duration, delay) {
+
+    var d = new $.Deferred();
+
+    var duration = duration || 0;
+    var delay = delay || 0;
+    var easing = Quint.easeInOut;
 
     for(var i in JATT.elements) {
       TweenMax.to(JATT.elements[i].node, duration, {
         x: 0,
         y: 0,
-        scale: 1
+        scale: 1,
+        delay: delay,
+        ease: easing
       });
+    }
+
+    TweenMax.to('#fade', duration * 0.3, {
+      opacity: 0,
+      delay: delay
+    });
+
+    // timeline
+
+    TweenMax.to(JATT.c, duration, {
+      x: 0,
+      delay: delay,
+      onComplete: d.resolve
+    });
+
+    return d.promise();
+
+  };
+
+  var go = function(key, duration) {
+
+    JATT.Nav.close();
+
+    if(current !== key) {
+
+      states[current].leave().then(function() {
+        current = key;
+        states[key].enter();
+      });
+
     }
 
   };
 
   return {
     intro: intro,
-    media: media,
-    home: home
+    go: go
   };
 
 })();

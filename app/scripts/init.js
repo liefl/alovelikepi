@@ -6,11 +6,15 @@ JATT.init = function() {
   JATT.c = $('#jackandthegiant');
 
   JATT.Assets.load().then(function() {
-    //JATT.Navigation.intro();
 
-    setTimeout(function() {
-      JATT.Navigation.media();
-    }, 400);
+    JATT.POI.init(); // init points of interest
+    JATT.Nav.init(); // init nav bar
+
+    scarfAnimation(); // we have to write this animation dynamically, it's too fucken big
+
+    //particleAnimation();
+
+    //JATT.Navigation.intro();
 
   });
 
