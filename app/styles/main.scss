@@ -9,21 +9,59 @@
 @import "nav";
 
 
-@font-face {
-    font-family: 'blanchcaps';
-    src: url('../fonts/blanch_caps-webfont.eot');
-    src: url('../fonts/blanch_caps-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/blanch_caps-webfont.woff2') format('woff2'),
-         url('../fonts/blanch_caps-webfont.woff') format('woff'),
-         url('../fonts/blanch_caps-webfont.ttf') format('truetype'),
-         url('../fonts/blanch_caps-webfont.svg#blanchcaps') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
 
-  font-family: 'blanchcaps';
+  background: #1F2F42;
+
+  .content-mobile {
+    display: none;
+  }
+
+  &.is-mobile {
+    .content-mobile {
+      display: block;
+    }
+    .content-desktop {
+      display: none;
+    }
+  }
+
+}
+
+section {
+
+  position: relative;
+  top: 0; left: 0;
+  width: 100%;
+
+  &.content-mobile {
+
+    color: #FFF;
+    text-align: center;
+
+  }
+
+}
+
+
+
+
+
+// preloader
+
+#preloader {
+
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #FFF;
+  font-size: 36px;
+  z-index: 100;
+
 }
 
 #fade {
@@ -33,7 +71,7 @@ body {
   width: 100%; height: 100%;
   background: #111;
   pointer-events: none;
-  opacity: 0;
+  opacity: 1;
 
 }
 
@@ -43,190 +81,16 @@ body {
   top: 50%; left: 50%;
   width: 3000px; height: 2000px;
   margin: -1000px 0 0 -1500px;
-  background: #1f2f42;
-
-  .big-star {
-
-    fill: #FFF;
-  }
 
 
 
-  // dialogue
+}
 
-  .dialogue-box {
+#controls {
 
-    position: fixed;
-    top: 30px; left: 30px;
-    right: 30px;
-    height: 50%;
-    background: #FFF;
-    border-radius: 50px;
-    transform: translate3d(0,60px,0);
-    transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
-    opacity: 0;
-    pointer-events: none;
-
-    &::before {
-
-      position: absolute;
-      top: 100%; left: 50%;
-      margin-left: -380px;
-      width: 0; height: 0;
-      border-style: solid;
-      border-width: 10px 10px 0 10px;
-      border-color: #FFFFFF transparent transparent transparent;
-      content: ' ';
-    }
-    
-  }
-
-  &.dialogue .dialogue-box {
-
-    transform: translate3d(0,0,0);
-    opacity: 0.7;
-
-  }
-
-
-
-  .map {
-
-  
-    // table view
-
-    .table-view {
-
-      .table-view-shape {
-        fill-opacity: 0;
-        transition: 0.4s linear;
-      }
-
-      .table-view-outline {
-
-        stroke: #6d7783;
-        stroke-width: 3;
-        stroke-dasharray: 2938.20556640625;
-        stroke-dashoffset: 2938.20556640625;
-        transition: all 1s linear;
-       
-      }
-
-      .table-view-row {
-
-        rect {
-          fill: #1f2f42;
-        }
-
-        text {
-
-          font-size: 24px;
-          font-family: 'blanchcaps';
-          fill: #FFF;
-
-        }
-
-        .table-date {
-
-          font-size: 18px;
-          font-family: "CubanoRegular";
-
-
-        }
-
-        .table-info {
-
-          rect {
-            fill: $pink;
-          }
-        }
-
-
-      }
-
-
-    }
-
-    .map-header {
-
-      text {
-        font-size: 76px;
-        fill: #FFF;
-      }
-
-      .map-header-text, .map-header-toggle {
-        opacity: 0;
-      }
-    }
-
-    .map-location {
-
-      &.map-location-template {
-        display: none;
-      }
-
-      .map-location-marker {
-
-        cursor: pointer;
-
-        circle {
-          fill: #FFF;
-        }
-      }
-
-      // .map-location-hover {
-      //   pointer-events: none;
-      // }
-
-      .map-location-event-template {
-        display: none;
-
-      }
-
-      .map-location-bg {
-        fill: #162230;
-      }
-
-      .map-location-text {
-        fill: #FFF;
-      }
-
-      .map-text-location {
-        font-size: 22px;
-      }
-
-
-
-      .map-location-venue {
-        font-size: 28px;
-      }
-      .map-location-date {
-        font-size: 11px;
-      }
-
-      .map-location-info {
-        font-size: 22px;
-        rect {
-          fill: #c0326b;
-          transition: all 0.3s;
-        }
-        text {
-          fill: #FFF !important;
-        }
-
-        &:hover {
-          rect {
-            fill: #cb648e;
-          }
-        }
-      }
-
-      
-    }
-
-  }
-
-
+  position: fixed;
+  top: 0; right: 0;
+  z-index: 100;
 
 }
 
@@ -264,7 +128,7 @@ body {
   }
 
   .cloud6 {
-    fill: #f9fae7;
+    fill: #ffffff;
     pointer-events: none;
   }
 
@@ -296,49 +160,18 @@ body {
 
   position: fixed;
   bottom: 20px; left: 20px;
-  width: 250px; height: 66px;
+  width: 250px; height: 63px;
   perspective: 1000px;
   color: #FFF;
   z-index: 200;
-
-  .audio-player-embed {
-
-    position: absolute;
-    width: 100%; height: 100%;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-    transform: translate3d(0px,70px,0) rotateX(-90deg);
-
-  }
-
-  .audio-player-open {
-
-    position: absolute;
-    bottom: 0; left: 0;
-    transition: all 0.5s 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-
-  }
+  transition: all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transform: translate3d(0px,70px,0) rotateX(-90deg);
+  pointer-events: none;
 
   &.open {
 
-    .audio-player-embed {
-
-      opacity: 1;
-      pointer-events: all;
-      transition-delay: 0.2s;
-      transform: rotateX(0deg) rotateY(0deg) scale(1) translate3d(0,0,0);
-
-    }
-
-    .audio-player-open {
-
-      opacity: 0;
-
-      transition-delay: 0s;
-      transform: translate3d(0px,-30px,0);
-      
-    }
+    transform: rotateX(0deg) rotateY(0deg) scale(1) translate3d(0,0,0);
+    pointer-events: all;
 
   }
 

@@ -4,6 +4,7 @@ JATT.Media = (function() {
 
   var index = 0;
   var items = [];
+  var g;
 
   var $container, $buttons = [];
   var $viewer = $('#media-viewer');
@@ -12,7 +13,7 @@ JATT.Media = (function() {
 
     Snap.load('images/cave.svg', function(f) {
 
-      var g = JATT.s.group().addClass('media').append(f.select('g'));
+      g = JATT.s.group().addClass('media').append(f.select('g'));
 
       // elements
 
@@ -40,6 +41,12 @@ JATT.Media = (function() {
 
       // opening animation
 
+      TweenMax.from(g.select('.cave').node, 2, {
+        scale: 0.8,
+        x: 300,
+        y: 210
+      });
+
       TweenMax.to($container.find('.controls'), 0, {
         y: 1600
       });
@@ -55,6 +62,12 @@ JATT.Media = (function() {
   };
 
   var hide = function() {
+
+    TweenMax.to(g.select('.cave').node, 1, {
+      scale: 0.8,
+      x: 300,
+      y: 210
+    });
 
     TweenMax.to('#fade', 0.5, {
       opacity: 1,

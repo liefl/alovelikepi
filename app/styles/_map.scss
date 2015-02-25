@@ -1,6 +1,6 @@
 .map-state {
 
-  transition: opacity 0.3s;
+  transition: opacity 0.5s;
 
   .map-outline {
 
@@ -31,9 +31,60 @@
 
     .map-location {
 
-      &.template {
+      &.map-location-template {
         display: none;
       }
+
+      .map-location-event-template {
+        display: none;
+
+      }
+
+      .map-location-marker {
+
+        cursor: pointer;
+        fill: #FFF;
+        
+      }
+
+      .map-location-bg {
+        fill: #162230;
+      }
+
+      .map-location-text {
+        fill: #FFF;
+      }
+
+      .map-text-location {
+        font-size: 22px;
+      }
+
+      .map-location-venue {
+        font-size: 28px;
+      }
+
+      .map-location-date {
+        font-size: 11px;
+      }
+
+      .map-location-info {
+        font-size: 22px;
+        rect {
+          fill: #c0326b;
+          transition: all 0.3s;
+        }
+        text {
+          fill: #FFF !important;
+        }
+
+        &:hover {
+          rect {
+            fill: #cb648e;
+          }
+        }
+      }
+
+
 
     }
 
@@ -45,7 +96,6 @@
 
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s;
 
   .table-outline {
 
@@ -118,11 +168,20 @@
 
   }
 
-
-
 }
 
 .map-header {
+
+  text {
+
+    font-size: 76px;
+    fill: #FFF;
+
+  }
+
+  .map-header-text, .map-header-toggle {
+    opacity: 0;
+  }
 
   .map-header-toggle-item {
 
@@ -197,12 +256,13 @@
   .map-state {
 
     opacity: 0;
+    transition: opacity 0s;
     
 
   }
 
   .table-bg {
-    animation: tableFlash 1s 1s forwards;
+    animation: tableFlash 1s 0.6s forwards;
   }
 
 }
@@ -239,7 +299,7 @@
   }
 
   100% {
-    stroke-opacity: 0.4;
+    stroke-opacity: 0.6;
   }
 
 }

@@ -9,13 +9,13 @@ JATT.Assets = (function() {
       name: 'mountains',
       path: 'images/mountains.svg',
       xPos: 0,
-      yPos: 750
+      yPos: 700
     },
     {
       name: 'mountains2',
       path: 'images/mountains-2.svg',
       xPos: 0,
-      yPos: 420
+      yPos: 380
     },
     {
       name: 'stars',

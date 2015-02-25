@@ -7,10 +7,11 @@
     .slab-face {
 
       fill: #D01B68;
-      stroke: #FFF;
+      stroke: #ff7bb3;
       stroke-width: 3;
       stroke-miterlimit: 3;
       stroke-opacity: 0;
+      transition: all 0.2s;
 
     }
 
@@ -22,11 +23,8 @@
 
       .slab-face {
         stroke-opacity: 1;
+        fill: #f24790;
       }
-
-      
-
-      
 
     }
 
@@ -37,6 +35,28 @@
     .btn-controls {
 
       cursor: pointer;
+
+      .btn-face {
+
+        fill: #D01B68;
+        stroke: #ff7bb3;
+        stroke-width: 3;
+        stroke-miterlimit: 3;
+        stroke-opacity: 0;
+        transition: all 0.2s;
+
+      }
+
+      &:hover {
+
+        .btn-face {
+
+          stroke-opacity: 1;
+          fill: #f24790;
+
+        }
+
+      }
 
     }
   }

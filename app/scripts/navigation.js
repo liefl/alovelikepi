@@ -10,6 +10,8 @@ JATT.Navigation = (function() {
 
       enter: function() {
 
+        clear(0.8);
+
       },
 
       leave: function() {
@@ -26,12 +28,12 @@ JATT.Navigation = (function() {
 
       enter: function() {
 
-        var duration = duration || 2.5;
+        var duration = duration || 1.2;
         var easing = Quint.easeInOut;
 
         TweenMax.to(JATT.elements['cliff'].node, duration, {
           x: -4300,
-          y: 0,
+          y: -230,
           scale: 3,
           ease: easing
         });
@@ -51,7 +53,7 @@ JATT.Navigation = (function() {
 
         TweenMax.to(JATT.elements['giant'].node, duration, {
           x: 500,
-          y: -150,
+          y: -170,
           scale: 1.4,
           ease: easing
         });
@@ -93,7 +95,7 @@ JATT.Navigation = (function() {
 
         // timeline
 
-        TweenMax.to(JATT.c, duration * 0.6, {
+        TweenMax.to(JATT.c, duration * 0.01, {
           x: 0,
           onComplete: JATT.News.init
         });
@@ -122,51 +124,63 @@ JATT.Navigation = (function() {
         var easing = Quint.easeInOut;
 
         TweenMax.to(JATT.elements['cliff'].node, duration, {
-          y: 1100
+          y: 1100,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['mountains'].node, duration, {
-          y: 850
+          y: 850,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['mountains2'].node, duration, {
-          y: 800
+          y: 800,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['giant'].node, duration, {
-          y: 850
-        });
-
-        TweenMax.to(JATT.elements['giant'].select('.fairy'), duration, {
-          y: -1000
+          y: 850,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud6'].node, duration, {
-          y: 950
+          y: 950,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud5'].node, duration, {
-          y: 850
+          y: 850,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud4'].node, duration, {
-          y: 750
+          y: 750,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud3'].node, duration, {
-          y: 650
+          y: 650,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud2'].node, duration, {
-          y: 550
+          y: 550,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud1'].node, duration, {
-          y: 450
+          y: 450,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['stars'].node, duration, {
-          y: 250
+          y: 250,
+          ease: easing
+        });
+
+        TweenMax.to(JATT.elements['stars'].select('.moon').node, duration, {
+          y: 250,
+          ease: easing
         });
 
         // timeline
@@ -202,7 +216,8 @@ JATT.Navigation = (function() {
         TweenMax.to(JATT.elements['cliff'].node, duration, {
           x: -2100,
           y: 100,
-          scale: 2
+          scale: 2,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['giant'].node, duration, {
@@ -216,12 +231,14 @@ JATT.Navigation = (function() {
           x: -1200,
           y: 200,
           scale: 1.8,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['mountains2'].node, duration, {
           x: -750,
           y: 150,
           scale: 1.5,
+          ease: easing
         });
 
         TweenMax.to(JATT.elements['cloud6'].node, duration, {
@@ -279,7 +296,7 @@ JATT.Navigation = (function() {
 
   var intro = function() {
 
-    var duration = 5;
+    var duration = 2.5;
     var easing = Quint.easeInOut;
 
     TweenMax.from(JATT.elements['cliff'].node, duration, {
@@ -337,6 +354,12 @@ JATT.Navigation = (function() {
       ease: easing
     });
 
+
+    TweenMax.from(JATT.elements['stars'].select('.moon').node, duration, {
+      y: 400,
+      ease: easing
+    });
+
     TweenMax.to('#fade', 2, {
       opacity: 0
     });
@@ -378,9 +401,10 @@ JATT.Navigation = (function() {
 
   };
 
+
   var go = function(key, duration) {
 
-    JATT.Nav.close();
+    JATT.Nav.view(key);
 
     if(current !== key) {
 

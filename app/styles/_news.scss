@@ -1,46 +1,131 @@
+// svg elements
+
+.cliff {
+
+  .dialogue {
+
+    opacity: 0;
+    transition: opacity 0.3s 0.3s;
+
+    .btn-home {
+
+      fill: #C2346C;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+
+      &:hover {
+
+        fill: #dd4592;
+
+      }
+
+    }
+
+  }
+
+  &.news-hover {
+
+    .dialogue {
+
+      opacity: 1;
+      transition: opacity 0.3s;
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
 #news-viewer {
 
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 800px;
-  height: 520px;
+  width: 860px;
+  height: 600px;
   margin-left: -420px;
-  margin-top: -260px;
-  background: rgba(255,255,255,0.8);
+  margin-top: -300px;
+  background: none;
   padding: 10px;
-  font-size: 26px;
   pointer-events: none;
+  transition: 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  // transform: scale(0.9) translate3d(-100,0,0);
   opacity: 0;
-  transform: translate3d(300px,0,0);
-  transition: 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  overflow: auto;
 
-  &::after {
+  .news-item {
 
-    right: 100%;
-    top: 100%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(255, 255, 213, 0);
-    border-right-color: rgba(255,255,255,0.8);
-    border-width: 20px;
-    margin-top: -100px;
+    padding: 0 20px 40px 0;
+
+    h1 {
+
+      font-family: 'cubanoregular';
+      font-size: 50px;
+      color: #1f2f42;
+      margin: 0;
+      letter-spacing: 2px;
+
+    }
+
+    h2 {
+
+      font-family: 'blanchcaps';
+      font-size: 34px;
+      color: #4fb98f;
+      margin: 0;
+      letter-spacing: 5px;
+
+    }
+
+    p {
+
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 14px;
+      line-height: 1.8em;
+
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0;
+    border-radius: 10px;
 
   }
 
 }
+
+
 
 #jackandthegiant.news-active {
 
   #news-viewer {
 
     opacity: 1;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0) scale(1);
     pointer-events: all;
+    transition: 500ms 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
 
+  }
+
+  .dialogue {
+
+    opacity: 1 !important;
+
+    .btn-home {
+
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity 500ms 1s cubic-bezier(0.770, 0.000, 0.175, 1.000), fill 0.3s;
+
+    }
+    
   }
 }

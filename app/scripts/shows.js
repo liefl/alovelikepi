@@ -196,7 +196,10 @@ JATT.Shows = (function() {
       element.select('.table-row-info').attr('xlink:href', show.link);
 
       TweenMax.to(element.select('.table-row-content').node, 0, {
-        x: -950
+        x: -200,
+        y: -20,
+        opacity: 0,
+        scale: 1.4,
       });
 
       shows[k].element = element;
@@ -315,28 +318,6 @@ JATT.Shows = (function() {
 
     }
 
-    // for(var i=0; i < globals.shows.length; i++) {
-
-    //   var element = globals.shows[i].element;
-
-    //   TweenMax.to(element.select('.location-dot').node, 0.5, {
-    //     attr: {
-    //       r: 0
-    //     },
-    //     ease: Back.easeIn,
-    //     overwrite: true
-    //   });
-
-    //   TweenMax.to(element.select('.map-location-hover').node, 0.5, {
-    //     x: 20,
-    //     y: -20,
-    //     opacity: 0,
-    //     ease: Back.easeIn,
-    //     overwrite: true
-    //   });
-
-    // }
-
   }
 
   function displayShowsTable() {
@@ -347,9 +328,12 @@ JATT.Shows = (function() {
 
       TweenMax.to(shows[i].element.select('.table-row-content').node, 0.8, {
         x: 0,
+        y: 0,
+        opacity: 1,
+        scale: 1,
         overwrite: true,
         delay: i * 0.1 + 0.8,
-        ease: Quint.easeInOut
+        ease: Back.easeOut
       });
 
     }
@@ -362,10 +346,13 @@ JATT.Shows = (function() {
 
     for(var i=0; i < shows.length; i++) {
 
-      TweenMax.to(shows[i].element.select('.table-row-content').node, 0.5, {
-        x: -950,
+      TweenMax.to(shows[i].element.select('.table-row-content').node, 0.1, {
+        x: -200,
+        y: -20,
+        opacity: 0,
+        scale: 1.4,
         overwrite: true,
-        delay: i * 0.1
+        delay: 0.5
       });
 
     }

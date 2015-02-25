@@ -191,7 +191,7 @@ function scarfAnimation() {
   var settings = {
       wavelength: 10,
       amplitude: 7,
-      period: 200,
+      period: 100,
       squeeze: -0.8,
       startY: 30
     };
@@ -202,7 +202,7 @@ function scarfAnimation() {
 
   var animation = [];
 
-  for(var j=0; j < 1200; j++) {
+  for(var j=0; j < 601; j++) {
 
     var points = [];
     var now = j / settings.period;
@@ -223,7 +223,11 @@ function scarfAnimation() {
 
     }
 
-    animation.push('M' + points.join(' '));
+    if(j % 30 == 0) {
+      console.log(j);
+      animation.push('M' + points.join(' '));
+    }
+   
 
   }
 
@@ -234,7 +238,7 @@ function scarfAnimation() {
   animationHTML += '  repeatCount="indefinite"\n';
   animationHTML += '></animate>';
 
-  $('.scarf-path').html(animationHTML);
+  //$('.scarf-path').html(animationHTML);
 
 }
 

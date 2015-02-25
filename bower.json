@@ -5,6 +5,7 @@
     "jquery": "~1.11.1",
     "modernizr": "~2.8.2",
     "greensock": "~1.14.2",
-    "Snap.svg": "git://github.com/adobe-webplatform/Snap.svg.git#~0.3.0"
+    "Snap.svg": "git://github.com/adobe-webplatform/Snap.svg.git#~0.3.0",
+    "jquery-cookie": "~1.4.1"
   }
 }
