@@ -24,7 +24,6 @@ JATT.init = function() {
 
     JATT.Nav.init(); // init navigation
     JATT.Music.init(); // init music
-    JATT.c.addClass('loaded');
 
     setTimeout(function() {
       JATT.Navigation.intro(); // into animation

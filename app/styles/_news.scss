@@ -38,10 +38,6 @@
 }
 
 
-
-
-
-
 #news-viewer {
 
   position: absolute;
@@ -78,7 +74,7 @@
       font-family: 'blanchcaps';
       font-size: 34px;
       color: #4fb98f;
-      margin: 0;
+      margin: 0 0 15px;
       letter-spacing: 5px;
 
     }
@@ -88,6 +84,7 @@
       font-family: Verdana, Geneva, sans-serif;
       font-size: 14px;
       line-height: 1.8em;
+      margin-bottom: 10px;
 
     }
   }

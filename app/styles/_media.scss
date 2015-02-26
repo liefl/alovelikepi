@@ -71,6 +71,9 @@
   background: #000;
   transform: translate3d(0,2500px,0);
   transition: all 1.2s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   
   .media-viewer-content {
 

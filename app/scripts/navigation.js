@@ -281,7 +281,12 @@ JATT.Navigation = (function() {
           ease: easing
         });
 
-        TweenMax.to('#fade', 1.5, {
+         TweenMax.to(JATT.elements['moon'].node, duration, {
+          y: -50,
+          ease: easing
+        });
+
+        TweenMax.to('#jackandthegiantfade', 1.5, {
           opacity: 1,
           onComplete: JATT.Media.init
         });
@@ -306,7 +311,7 @@ JATT.Navigation = (function() {
 
   var intro = function() {
 
-    var duration = 1.5;
+    var duration = 2.5;
     var easing = Quint.easeInOut;
 
     TweenMax.from(JATT.elements['cliff'].node, duration, {
@@ -369,7 +374,7 @@ JATT.Navigation = (function() {
       ease: easing
     });
 
-    TweenMax.to('#fade', 2, {
+    TweenMax.to('#jackandthegiantfade', 2, {
       opacity: 0
     });
 
@@ -400,7 +405,7 @@ JATT.Navigation = (function() {
       });
     }
 
-    TweenMax.to('#fade', duration * 0.3, {
+    TweenMax.to('#jackandthegiantfade', duration * 0.3, {
       opacity: 0,
       delay: delay
     });

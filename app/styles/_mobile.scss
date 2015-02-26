@@ -1,4 +1,4 @@
-.content-mobile {
+.mobile-content {
 
   header {
 
@@ -27,20 +27,16 @@
       font-weight: 300;
       margin: 0;
       letter-spacing: 5px;
-      float: left;
 
     }
 
-    .btn-social {
+    .btn-mobile-social {
 
-      display: block;
       float: right;
       color: #FFF;
       text-decoration: none;
       font-size: 20px;
-      margin-left: 30px;
-
-
+      margin: 3px 0 0 15px;
 
     }
 
@@ -52,8 +48,6 @@
     background: #FFF;
 
     .news-item {
-
-      
 
       h1 {
 
@@ -70,7 +64,7 @@
         font-family: 'blanchcaps';
         font-size: 34px;
         color: #4fb98f;
-        margin: 0;
+        margin: 0 0 15px 0;
         letter-spacing: 5px;
 
       }
@@ -80,6 +74,7 @@
         font-family: Verdana, Geneva, sans-serif;
         font-size: 14px;
         line-height: 1.8em;
+        margin-bottom: 10px;
 
       }
     }
@@ -174,11 +169,13 @@
 
         display: inline-block;
         background: #bf326c;
-        padding: 8px 20px;
+        padding: 5px 9px;
         transition: all 0.3s;
         cursor: pointer;
         text-decoration: none;
+        font-size: 16px;
         color: #FFF !important;
+        line-height: 29px;
 
         &:hover {
           background: #dd518a;

@@ -1,0 +1,76 @@
+[class^="btn"] {
+
+  position: relative;
+  display: block;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s;
+
+  // nav buttons
+
+  &.btn-nav {
+
+    width: 35px; height: 35px;
+    line-height: 41px;
+    background: #131C26;
+    color: #FFF;
+    margin: 0 3px;
+    border-radius: 10px;
+
+
+    .icon-new {
+
+      position: absolute;
+      top: -5px; right: -5px;
+      color: #dd4592;
+      transform: scale(0);
+      transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+    }
+
+    &.has-new-content .icon-new {
+
+      transform: scale(1);
+      transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+    }
+
+    // nudge
+
+    &.btn-news i {
+      margin-left: 3px;
+    }
+
+    &:hover {
+      background: #040608;
+    }
+
+    &.selected {
+      background: #4fb98f;
+    }
+
+  }
+
+  // social buttons
+
+  &.btn-social {
+
+    width: 32px; height: 29px;
+    line-height: 34px;
+    background: #f4f6f5;
+    color: #323232;
+    margin: 5px 0 0 255px;
+    border-radius: 4px;
+
+    &:hover {
+
+      color: #ff4a00;
+      
+    }
+
+  }
+
+
+}
+

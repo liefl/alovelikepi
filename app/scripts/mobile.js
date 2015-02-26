@@ -18,7 +18,6 @@ JATT.Mobile = (function() {
 
       var shows = [];
 
-
       for(var i=0; i < response.data.locations.length; i++) {
 
         var location = response.data.locations[i];
@@ -44,11 +43,9 @@ JATT.Mobile = (function() {
         var show = shows[k];
         var showDate = new Date(show.date);
 
-        console.log(show);
-
         var el = element.clone();
 
-        el.find('.date').html(showDate.getMonth() + '/' + showDate.getDay());
+        el.find('.date').html((showDate.getMonth() + 1) + '/' + showDate.getDate());
         el.find('.time').html(formatAMPM(show.date));
         el.find('.city').html(show.city + ', ' + show.state);
         el.find('.venue').html(show.venue);
@@ -58,22 +55,9 @@ JATT.Mobile = (function() {
 
         container.append(el);
 
-        
-
-
-
-
       }
 
-
-
     });
-
-
-
-
-
-    
 
   };
 

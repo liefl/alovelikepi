@@ -21,26 +21,80 @@
   </head>
   <body>
 
-    <section class="content-mobile">
+    <!-- main content -->
+
+    <main id="jackandthegiant">
 
       <header>
-        <h1>A LOVE LIKE PI</h1>
-        <a href="http://www.twitter.com/alovelikepi" target="_blank" class="btn-social">
-          <i class="icon-twitter"></i>
-        </a>
-        <a href="http://www.facebook.com/alovelikepi" target="_blank" class="btn-social">
-          <i class="icon-facebook"></i>
-        </a>
-        
+        A LOVE LIKE PI
       </header>
 
-      <div class="mobile-news">
-        
-      </div>
+      <!-- navigation -->
 
+      <nav>
+        <a href="#" class="btn-nav btn-home pull-right">
+          <i class="icon-home"></i>
+        </a>
+
+        <a href="#media" class="btn-nav btn-media pull-right">
+          <i class="icon-video"></i>
+          <i class="icon-new"></i>
+        </a>
+
+        <a href="#shows" class="btn-nav btn-tour pull-right">
+          <i class="icon-airplane"></i>
+          <i class="icon-new"></i>
+        </a>
+
+        <a href="#news" class="btn-nav btn-news pull-right">
+          <i class="icon-news"></i>
+          <i class="icon-new"></i>
+        </a>
+      </nav>
+
+      <!-- content -->
+
+      <svg id="jackandthegiantsvg"></svg>
+      <div id="jackandthegiantfade"></div>
+      <div id="news-viewer"></div>
+      <div id="media-viewer"></div>
+      
+      <!-- footer -->
+
+      <footer>
+
+        <div class="soundcloud-embed"> <!-- soundcloud embed here --> </div>
+
+        <a class="btn-social" href="http://www.facebook.com/alovelikepi" target="_blank" >
+          <i class="icon-facebook"></i>
+        </a>
+        <a class="btn-social" href="http://www.twitter.com/alovelikepi" target="_blank" >
+          <i class="icon-twitter"></i>
+        </a>
+
+      </footer>
+
+    </main>
+
+    <!-- mobile content -->
+
+    <section class="mobile-content">
+
+      <header>
+        <h1 class="pull-left">A LOVE LIKE PI</h1>
+        <a href="http://www.twitter.com/alovelikepi" target="_blank" class="btn-mobile-social">
+          <i class="icon-twitter"></i>
+        </a>
+        <a href="http://www.facebook.com/alovelikepi" target="_blank" class="btn-mobile-social">
+          <i class="icon-facebook"></i>
+        </a>
+      </header>
+
+      <div class="mobile-news"></div>
       <div class="mobile-art"></div>
 
       <div class="mobile-tour">
+
         <h2>TOUR</h2>
 
         <table class="mobile-tour-content">
@@ -63,7 +117,7 @@
                 <br/>
                 <span class="venue">BOWERY ELECTRIC</span>
               </td>
-              <td>
+              <td class="more-info">
                 <a class="info">MORE INFO</a>
               </td>
             </tr>
@@ -72,57 +126,13 @@
 
       </div>
 
-      
 
-    </section>
-
-    <section class="content-desktop">
-
-      <div id="jackandthegiant">
-        <svg id="jackandthegiantsvg"></svg>
-        <div id="news-viewer"></div>
-        <div id="media-viewer"></div>
-      </div>
-
-      <header>
-
-        <a href="#" class="btn btn-home"><img src="images/icon-home.svg"/></a>
-        <a class="btn btn-help">?</a>
-        
-      </header>
-
-      <footer>
-        <div class="audio-player">
-          <!-- soundcloud embed -->
-        </div>
-        <a href="http://www.facebook.com/alovelikepi" target="_blank" class="btn btn-facebook"><i class="icon-facebook"></i></a>
-        <a href="http://www.twitter.com/alovelikepi" target="_blank" class="btn btn-twitter"><i class="icon-twitter"></i></a>
-      </footer>
-
-      <div id="fade"></div>
 
     </section>
 
 
 
 
-
-
-
-
-
-   
-
-
-
- 
-    <!-- audio player -->
-
-   <!--  <div id="audio-player" class="open">
-      <div class="audio-player-embed">
-        <iframe id="audio-player-embed-iframe" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/186050953&amp;color=1f2f42&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-      </div>
-    </div> -->
 
 
 
@@ -132,7 +142,6 @@
     <script src="bower_components/greensock/src/uncompressed/TweenMax.js"></script>
     <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script>
     <script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
-    <script src="bower_components/jquery-hashchange/jquery.ba-hashchange.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -147,7 +156,7 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/utils.js"></script>
+        <script src="scripts/vendor/jquery-hashchange.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/init.js"></script>
         <script src="scripts/assets.js"></script>

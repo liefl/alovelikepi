@@ -34,21 +34,11 @@
 	      calcMode="spline"
 	      repeatCount="indefinite"
 	    />
-
-
-
+      
 	  </g>
 	</g>
 
-	<g class="notification" transform="translate(60, 60)">
-
-      <circle r="9" fill="#c0326b"/>
-      <text x="-3" y="4">1</text>
-
-    </g>
-
-
-
+<!-- 
 	<g class="cursor" transform="translate(150 150)">
 
       <path id="motionPath" fill="none" stroke="none" stroke-miterlimit="10" d="M0,0 10,10 0,0"/>
@@ -82,7 +72,7 @@
         
       </g>
 
-    </g>
+    </g> -->
 
 
 </g>

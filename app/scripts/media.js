@@ -7,9 +7,11 @@ JATT.Media = (function() {
   var g;
 
   var $container, $buttons = [];
-  var $viewer = $('#media-viewer');
+  var $viewer;
 
   var init = function() {
+
+    $viewer = $('#media-viewer');
 
     Snap.load('images/cave.svg', function(f) {
 
@@ -21,7 +23,9 @@ JATT.Media = (function() {
 
       $buttons['prev'] = $container.find('.btn-prev').on('click', prev);
       $buttons['next'] = $container.find('.btn-next').on('click', next);
-      $buttons['exit'] = $container.find('.btn-exit').on('click', exit);
+      $buttons['exit'] = $container.find('.btn-exit').on('click', function() {
+        exit();
+      });
 
       // listeners
 
@@ -41,17 +45,17 @@ JATT.Media = (function() {
 
       // opening animation
 
-      TweenMax.from(g.select('.cave').node, 2, {
-        scale: 0.8,
-        x: 300,
-        y: 210
-      });
+      // TweenMax.from(g.select('.cave').node, 2, {
+      //   scale: 0.8,
+      //   x: 300,
+      //   y: 210
+      // });
 
       TweenMax.to($container.find('.controls'), 0, {
         y: 1600
       });
 
-      TweenMax.to('#fade', 1, {
+      TweenMax.to('#jackandthegiantfade', 1, {
         opacity: 0,
         delay: 0.5
       });
@@ -63,13 +67,15 @@ JATT.Media = (function() {
 
   var hide = function() {
 
+    exit(0.5);
+
     TweenMax.to(g.select('.cave').node, 1, {
       scale: 0.8,
       x: 300,
       y: 210
     });
 
-    TweenMax.to('#fade', 0.5, {
+    TweenMax.to('#jackandthegiantfade', 0.5, {
       opacity: 1,
       onComplete: function() {
         $container.remove();
@@ -106,7 +112,7 @@ JATT.Media = (function() {
 
   var load = function(idx) {
 
-    var $content = $viewer.removeClass('ready').find('.media-viewer-content');
+    var $content = $viewer.removeClass('ready');
     $content.css('background-image', '').html('');
 
     if(items[idx].type === 'image') {
@@ -199,12 +205,14 @@ JATT.Media = (function() {
 
   };
 
-  var exit = function() {
+  var exit = function(dur) {
 
-    var duration =  1.5;
+    var duration =  dur || 1.5;
     var easing = Quint.easeInOut;
 
     // animation
+
+    console.log(duration);
 
     $viewer.removeClass('active');
 

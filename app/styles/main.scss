@@ -2,197 +2,137 @@
 // endbower
 
 @import "fonts";
+@import "global";
 @import "colors";
+@import "buttons";
 @import "map";
 @import "media";
 @import "news";
 @import "nav";
 @import "mobile";
 
-body {
 
-  background: #1F2F42;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+// main html content
 
-  .content-mobile {
-    display: none;
-  }
-
-  &.is-mobile {
-    .content-mobile {
-      display: block;
-    }
-    .content-desktop {
-      display: none;
-    }
-  }
-
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-
-section {
+main {
 
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-
-}
-
-.content-desktop {
-
-  // header
+  background: #1F2F42;
+  overflow: hidden;
+  z-index: 50;
 
   header {
+
+    position: absolute;
+    top: 20px; left: 20px;
+    font-family: 'blanchcaps';
+    font-size: 36px;
+    letter-spacing: 5px;
+    color: #FFF;
+    z-index: 100;
+
+  }
+
+  nav {
 
     position: absolute;
     top: 20px; right: 20px;
     z-index: 100;
 
-    .btn {
+  }
+  
+  footer {
 
-      position: relative;
-      width: 35px; height: 35px;
-      border-radius: 10px;
-      line-height: 35px;
-      margin-left: 5px;
-      color: #FFF;
-      background: #1e2f42;
-      display: block;
-      text-align: center;
-      float: right;
-      transition: all 0.3s;
+    position: absolute;
+    left: 20px; bottom: 20px;
+    z-index: 100;
 
-      &.btn-home img {
+    .soundcloud-embed {
 
-        width: 20px;
-        padding-top: 7px;
-
-      }
-
-      &.btn-help {
-
-        font-family: 'CubanoRegular';
-        text-decoration: none;
-        font-size: 24px;
-
-      }
-
-      &:hover {
-
-        background: #296760;
-      }
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 250px; height: 63px;
 
     }
 
   }
 
-
 }
 
-// preloader
-
-#preloader {
-
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-  color: #FFF;
-  font-size: 36px;
-  z-index: 100;
-
+body.is-mobile main {
+  display: none;
 }
 
-#fade {
-
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #111;
-  pointer-events: none;
-  opacity: 1;
-  z-index: 200;
-
-}
-
-#jackandthegiant {
-
-  position: fixed;
-  top: 50%; left: 50%;
-  width: 3000px; height: 2000px;
-  margin: -1000px 0 0 -1500px;
-
-  
-  
-
-
-
-}
-
-#controls {
-
-  position: fixed;
-  top: 0; right: 0;
-  z-index: 100;
-
-}
+// main svg content
 
 #jackandthegiantsvg {
 
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 50%; left: 50%;
+  width: 3000px; height: 2000px;
+  margin: -1000px 0 0 -1500px;
 
   // clouds
 
   .cloud1 {
+
     fill: #2d4560;
     pointer-events: none;
     opacity: 0.2;
+
   }
 
   .cloud2 {
+
     fill: #274455;
     pointer-events: none;
     opacity: 0.8;
+
   }
 
   .cloud3 {
+
     fill: #4fb98f;
     pointer-events: none;
+
   }
 
   .cloud4 {
+
     fill: #9beea6;
     pointer-events: none;
+
   }
 
   .cloud5 {
+
     fill: #f0ffb4;
     pointer-events: none;
+
   }
 
   .cloud6 {
+
     fill: #ffffff;
     pointer-events: none;
+
   }
 
   .cloud7 {
+
     fill: #f9fae7;
     pointer-events: none;
+
   }
 
+  // mountains
+
   .mountains2 {
+
     fill: #eadd9c;
+
   }
 
   // moon
@@ -202,156 +142,25 @@ section {
     cursor: pointer;
 
     .moon-hover {
+
       opacity: 0;
       transition: all 0.7s;
-    }
-
-    &:hover {
-      .moon-hover {
-        opacity: 1;
-      }
-    }
-
-  }
-
-  // shooting star
-
-  .shooting-star {
-
-    stroke-dashoffset: 466.3480224609375;
-    stroke-dasharray: 466.3480224609375;
-  }
-
-  // notification
-
-  .notification {
-
-    display: none;
-
-    text {
-
-      fill: #FFF;
-      font-family: 'CubanoRegular';
-      font-size: 11px;
 
     }
 
-  }
-
-  .new-content {
-
-    .notification {
-      display: block;
+    &:hover .moon-hover {
+      
+      opacity: 1;
+      
     }
 
   }
-
-  // cursors
-
-  .cursor {
-
-    display: none;
-
-    text {
-
-      fill: #FFF;
-      font-family: 'CubanoRegular';
-      font-size: 18px;
-      letter-spacing: 1px;
-
-    }
-
-  }
-
-}
-
-
-
-
-
-
-// footer 
-
-footer {
-
-  position: absolute;
-  left: 20px; bottom: 20px;
-  z-index: 100;
-  padding-left: 255px;
-
-  .audio-player {
-
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 250px; height: 63px;
-    
-  }
-
-  .btn {
-
-    position: relative;
-    display: block;
-    width: 32px; height: 29px;
-    margin-top: 5px;
-    background: #f4f6f5;
-    color: #323232;
-    text-align: center;
-    line-height: 34px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s;
-
-    &:hover {
-
-      color: #ff4a00;
-
-    }
-
-  }
-
-}
-
-
-
-
-
-
-// #audio-player {
-
-//   position: fixed;
-//   bottom: 20px; left: 20px;
-//   width: 250px; height: 63px;
-//   perspective: 1000px;
-//   color: #FFF;
-//   z-index: 200;
-//   transition: all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-//   transform: translate3d(0px,70px,0) rotateX(-90deg);
-//   pointer-events: none;
-
-//   &.open {
-
-//     transform: rotateX(0deg) rotateY(0deg) scale(1) translate3d(0,0,0);
-//     pointer-events: all;
-
-//   }
-
-// }
-
-
-
-
-#jackandthegiantsvg {
 
   // jack 
 
   .jack {
 
     cursor: pointer;
-
-    .body {
-
-      
-    }
 
     .body-glow {
 
@@ -370,19 +179,6 @@ footer {
 
     }
 
-    .particles {
-
-      opacity: 0.7;
-
-    }
-
-    .particle {
-
-      
-      transition: all 0.3s;
-
-    }
-
     &:hover {
 
       .scarf {
@@ -397,13 +193,6 @@ footer {
 
       }
 
-      .particle {
-
-        opacity: 1;
-        transform: scale(1.7);
-
-      }
-
     }
 
   }
@@ -411,13 +200,6 @@ footer {
   // giant
 
   .giant {
-
-    .fairy {
-
-      fill: #FFF;
-      cursor: pointer;
-
-    }
 
     .heart {
 
@@ -430,12 +212,10 @@ footer {
 
       }
 
-      &:hover {
+      &:hover .heart-shape-2 {
 
-        .heart-shape-2 {
-          opacity: 1;
-        }
-
+        opacity: 1;
+        
       }
 
     }
@@ -444,3 +224,15 @@ footer {
 
 }
 
+// fade
+
+#jackandthegiantfade {
+
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,1);
+  z-index: 1000;
+  pointer-events: none;
+
+}

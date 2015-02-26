@@ -61,7 +61,7 @@ JATT.Shows = (function() {
         // have to use jquery to populate tspan elements
 
         $(eventElement.select('.map-location-venue').node).text(eventData.venue);
-        $(eventElement.select('.map-location-date').node).text(eventData.date.getMonth() + '/' + eventData.date.getDay() + '/' + eventData.date.getFullYear() + ' - ' + formatAMPM(eventData.date));
+        $(eventElement.select('.map-location-date').node).text((eventData.date.getMonth() + 1) + '/' + eventData.date.getDate() + '/' + eventData.date.getFullYear() + ' - ' + formatAMPM(eventData.date));
         $(eventElement.select('.map-location-info').node).attr('xlink:href', eventData.link);
 
       }
@@ -157,7 +157,7 @@ JATT.Shows = (function() {
 
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
+    var ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
@@ -202,7 +202,7 @@ JATT.Shows = (function() {
       var transform = new Snap.Matrix().translate(0, k * 42);
       var element = template.clone().removeClass('table-row-template').transform(transform);
 
-      element.select('.table-row-date').attr('text', show.date.getMonth() + '/' + show.date.getDay());
+      element.select('.table-row-date').attr('text', (show.date.getMonth() + 1) + '/' + show.date.getDate());
       element.select('.table-row-location').attr('text', show.city + ', ' + show.state);
       element.select('.table-row-venue').attr('text', show.venue);
       element.select('.table-row-time').attr('text', formatAMPM(show.date));

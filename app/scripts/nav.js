@@ -11,15 +11,18 @@ JATT.Nav = (function() {
     locations = {
       news: {
         destination: 'news',
-        element: JATT.elements['jack']
+        element: JATT.elements['jack'],
+        nav: JATT.c.find('.btn-news')
       },
       media: {
         destination: 'media',
-        element: JATT.elements['giant'].select('.heart')
+        element: JATT.elements['giant'].select('.heart'),
+        nav:  JATT.c.find('.btn-media')
       },
       shows: {
         destination: 'shows',
-        element: JATT.elements['moon']
+        element: JATT.elements['moon'],
+        nav:  JATT.c.find('.btn-tour')
       }
     };
 
@@ -85,11 +88,9 @@ JATT.Nav = (function() {
 
     for(var k in locations) {
       if(visited[k] && visited[k] > locations[k].updatedAt) {
-        locations[k].element.removeClass('new-content');
-        
+        locations[k].nav.removeClass('has-new-content');
       } else {
-        locations[k].element.addClass('new-content');
-       
+        locations[k].nav.addClass('has-new-content');
       }
     }
 
@@ -101,22 +102,28 @@ JATT.Nav = (function() {
 
     var hash = window.location.hash.substr(1);
 
+     JATT.c.find('.btn-nav').removeClass('selected');
+
     switch(hash) {
 
       case 'news':
       JATT.Navigation.go('news');
+      locations['news'].nav.addClass('selected');
       break;
 
       case 'media':
       JATT.Navigation.go('media');
+      locations['media'].nav.addClass('selected');
       break;
 
       case 'shows':
       JATT.Navigation.go('shows');
+      locations['shows'].nav.addClass('selected');
       break;
 
       default:
       JATT.Navigation.go('home');
+      JATT.c.find('.btn-nav.btn-home').addClass('selected');
       break;
 
     }
