@@ -24,7 +24,7 @@
   ];
 
 
-  var cloud = data[4];
+  var cloud = data[1];
 
   Snap.load(cloud.url, function(f) {
 
@@ -52,7 +52,9 @@
     html += '<rect x="0" y="997" width="3000" height="700"/>';
     html += '</g>';
 
-    $('#test').html(html);
+    //$('#test').html(html);
+
+    console.log(html);
 
 
   });

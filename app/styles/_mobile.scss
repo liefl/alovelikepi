@@ -1,0 +1,196 @@
+.content-mobile {
+
+  header {
+
+    position: relative;
+    width: 100%; height: 80px;
+    background: #1e2f41;
+    line-height: 80px;
+    padding: 0 30px;
+    color: #FFF;
+
+    &::after {
+
+      position: absolute;
+      top: 100%; right: 0;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 0 1024px 25px 0;
+      border-color: transparent #1e2f41 transparent transparent;
+      content: ' ';
+    }
+
+    h1 {
+
+      font-family: 'blanchcaps';
+      font-size: 36px;
+      font-weight: 300;
+      margin: 0;
+      letter-spacing: 5px;
+      float: left;
+
+    }
+
+    .btn-social {
+
+      display: block;
+      float: right;
+      color: #FFF;
+      text-decoration: none;
+      font-size: 20px;
+      margin-left: 30px;
+
+
+
+    }
+
+  }
+
+  .mobile-news {
+
+    padding: 60px 30px 30px 30px;
+    background: #FFF;
+
+    .news-item {
+
+      
+
+      h1 {
+
+        font-family: 'cubanoregular';
+        font-size: 50px;
+        color: #1f2f42;
+        margin: 0;
+        letter-spacing: 2px;
+
+      }
+
+      h2 {
+
+        font-family: 'blanchcaps';
+        font-size: 34px;
+        color: #4fb98f;
+        margin: 0;
+        letter-spacing: 5px;
+
+      }
+
+      p {
+
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 14px;
+        line-height: 1.8em;
+
+      }
+    }
+
+  }
+
+  .mobile-art {
+
+    position: relative;
+    width: 100%; height: 550px;
+    background: url(../images/mobile-bg.jpg) 50% 0% no-repeat;
+
+  }
+
+  .mobile-tour {
+
+
+    background: #121a25;
+    color: #FFF;
+    
+
+    h2 {
+
+      font-family: 'blanchcaps';
+      font-size: 60px;
+      font-weight: 300;
+      margin: 0 0 20px 30px;
+
+    }
+
+    .mobile-tour-content {
+
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+      border: 0;
+
+      tr {
+
+        td:first-child, th:first-child {
+          padding-left: 30px;
+        }
+
+      }
+
+      th {
+
+        font-family: 'cubanoregular';
+        color: #a83e6c;
+        padding: 8px 0;
+        letter-spacing: 1px;
+
+      }
+
+      tbody {
+
+        .show-template {
+          display: none;
+        }
+
+        tr {
+
+          &:nth-child(even) {
+            background: #1e2f41;
+          }
+
+        }
+
+        td {
+
+          line-height: 20px;
+          font-family: 'blanchcaps';
+          font-size: 20px;
+          padding: 13px 0;
+          letter-spacing: 1px;
+
+
+
+        }
+
+      }
+
+      
+
+      .date {
+
+        font-family: 'cubanoregular';
+        font-size: 16px;
+      }
+
+      .info {
+
+        display: inline-block;
+        background: #bf326c;
+        padding: 8px 20px;
+        transition: all 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+        color: #FFF !important;
+
+        &:hover {
+          background: #dd518a;
+        }
+
+      }
+
+      
+
+    }
+
+  }
+
+
+}

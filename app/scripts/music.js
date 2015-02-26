@@ -6,7 +6,7 @@ JATT.Music = (function() {
 
   var init = function() {
 
-    player = $('#audio-player');
+    player = $('.audio-player');
     load(186050953);
   };
 

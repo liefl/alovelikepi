@@ -24,9 +24,15 @@ JATT.Assets = (function() {
       yPos: 0
     },
     {
+      name: 'moon',
+      path: 'images/moon.svg',
+      xPos: 1750,
+      yPos: 730
+    },
+    {
       name: 'giant',
       path: 'images/giant.svg',
-      xPos: 1250,
+      xPos: 1240,
       yPos: 680
     },
     {
@@ -116,6 +122,7 @@ JATT.Assets = (function() {
       // controlling depth
 
       JATT.s.append(JATT.elements['stars']);
+      JATT.s.append(JATT.elements['moon']);
       JATT.s.append(JATT.elements['cloud1']);
       JATT.s.append(JATT.elements['cloud2']);
       JATT.s.append(JATT.elements['cloud3']);

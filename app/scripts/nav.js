@@ -2,9 +2,11 @@ var JATT = JATT || {};
 
 JATT.Nav = (function() {
 
-  var locations, visited;
+  var locations, visited, timer;
 
   var init = function() {
+
+    $(window).hashchange(change);
 
     locations = {
       news: {
@@ -12,13 +14,13 @@ JATT.Nav = (function() {
         element: JATT.elements['jack']
       },
       media: {
-        destination: 'shows',
+        destination: 'media',
         element: JATT.elements['giant'].select('.heart')
       },
-      // shows: {
-      //   destination: 'shows',
-      //   element: JATT.elements['giant'].select('.fairy')
-      // }
+      shows: {
+        destination: 'shows',
+        element: JATT.elements['moon']
+      }
     };
 
     // add click listeners
@@ -26,7 +28,7 @@ JATT.Nav = (function() {
     for(k in locations) {
       (function(_dest) {
         locations[k].element.click(function() {
-          JATT.Navigation.go(_dest)
+           window.location.hash = _dest;
         });
       })(locations[k].destination);
     }
@@ -42,12 +44,14 @@ JATT.Nav = (function() {
       }
     });
 
+    // controls
 
-
-
+    $('.btn-help').click(function() {
+      help();
+    });
 
     $('.btn-home').click(function() {
-      JATT.Navigation.go('home');
+      window.location.hash = '';
     });
 
     // get last visited times
@@ -81,10 +85,10 @@ JATT.Nav = (function() {
 
     for(var k in locations) {
       if(visited[k] && visited[k] > locations[k].updatedAt) {
-        // visited 
+        locations[k].element.removeClass('new-content');
         
       } else {
-        // new content
+        locations[k].element.addClass('new-content');
        
       }
     }
@@ -93,18 +97,52 @@ JATT.Nav = (function() {
 
   };
 
-  var display = function() {
+  var change = function() {
+
+    var hash = window.location.hash.substr(1);
+
+    switch(hash) {
+
+      case 'news':
+      JATT.Navigation.go('news');
+      break;
+
+      case 'media':
+      JATT.Navigation.go('media');
+      break;
+
+      case 'shows':
+      JATT.Navigation.go('shows');
+      break;
+
+      default:
+      JATT.Navigation.go('home');
+      break;
+
+    }
 
   };
 
-  var hide = function() {
+
+  var help = function() {
+
+    JATT.c.addClass('help-state');
+
+    clearTimeout(timer);
+
+    timer = setTimeout(function() {
+
+      JATT.c.removeClass('help-state');
+
+    }, 4000);
 
   };
 
 
   return {
     init: init,
-    view: view
+    view: view,
+    change: change
   };
 
 })();

@@ -6,7 +6,7 @@ JATT.init = function() {
 
   if(typeof window.orientation !== 'undefined') {
 
-    $('body').addClass('is-mobile');
+    JATT.Mobile.init();
     return false;
 
   }

@@ -93,6 +93,11 @@ JATT.Navigation = (function() {
           ease: easing
         });
 
+        TweenMax.to(JATT.elements['moon'].node, duration, {
+          x: 250, 
+          ease: easing
+        });
+
         // timeline
 
         TweenMax.to(JATT.c, duration * 0.01, {
@@ -178,10 +183,15 @@ JATT.Navigation = (function() {
           ease: easing
         });
 
-        TweenMax.to(JATT.elements['stars'].select('.moon').node, duration, {
-          y: 250,
+        TweenMax.to(JATT.elements['moon'].node, duration, {
+          y: 500, // cheating
           ease: easing
         });
+
+        // TweenMax.to(JATT.elements['stars'].select('.moon').node, duration, {
+        //   y: 300,
+        //   ease: easing
+        // });
 
         // timeline
 
@@ -296,7 +306,7 @@ JATT.Navigation = (function() {
 
   var intro = function() {
 
-    var duration = 2.5;
+    var duration = 1.5;
     var easing = Quint.easeInOut;
 
     TweenMax.from(JATT.elements['cliff'].node, duration, {
@@ -354,14 +364,20 @@ JATT.Navigation = (function() {
       ease: easing
     });
 
-
-    TweenMax.from(JATT.elements['stars'].select('.moon').node, duration, {
-      y: 400,
+    TweenMax.from(JATT.elements['moon'].node, duration, {
+      y: 450,
       ease: easing
     });
 
     TweenMax.to('#fade', 2, {
       opacity: 0
+    });
+
+    // timeline
+
+    TweenMax.to(JATT.c, duration, {
+      x: 0,
+      onComplete: JATT.Nav.change
     });
 
   };

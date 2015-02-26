@@ -155,7 +155,7 @@
 					<g class="table-content-container" transform="translate(0,70)">
 						<g class="table-row table-row-template">
 							<g class="table-row-content">
-								<rect x="0" y="0" width="900" height="42" class="table-row-bg"/>
+								<rect x="-100" y="0" width="1000" height="42" class="table-row-bg"/>
 								<text x="80" y="28" class="table-row-date">10/11</text>
 								<text x="160" y="28" class="table-row-location">New York, NY</text>
 								<text x="340" y="28" class="table-row-venue">BOWERY ELECTRIC</text>
