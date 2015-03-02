@@ -5,17 +5,28 @@ JATT.Media = (function() {
   var index = 0;
   var items = [];
   var g;
+  var s;
 
   var $container, $buttons = [];
   var $viewer;
 
   var init = function() {
 
+    s = Snap("#jackandthegiantcavesvg");
+
     $viewer = $('#media-viewer');
 
     Snap.load('images/cave.svg', function(f) {
 
-      g = JATT.s.group().addClass('media').append(f.select('g'));
+      // pause root animation
+
+      try {
+        JATT.s.node.pauseAnimations();
+      } catch(e) {
+
+      }
+
+      g = s.group().addClass('media').append(f.select('g'));
 
       // elements
 
@@ -60,6 +71,8 @@ JATT.Media = (function() {
         delay: 0.5
       });
 
+      s.addClass('active');
+
     });
 
 
@@ -78,7 +91,16 @@ JATT.Media = (function() {
     TweenMax.to('#jackandthegiantfade', 0.5, {
       opacity: 1,
       onComplete: function() {
+
         $container.remove();
+        s.removeClass('active');
+
+        try {
+          JATT.s.node.unpauseAnimations();
+        } catch(e) {
+
+        }
+        
       }
     });
 
@@ -143,7 +165,7 @@ JATT.Media = (function() {
 
   var clear = function() {
 
-    $viewer.removeClass('ready').find('.media-viewer-content').html('');
+    $viewer.removeClass('ready').html('');
 
   };
 
@@ -211,8 +233,6 @@ JATT.Media = (function() {
     var easing = Quint.easeInOut;
 
     // animation
-
-    console.log(duration);
 
     $viewer.removeClass('active');
 

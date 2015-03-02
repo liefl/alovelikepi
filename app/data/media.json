@@ -3,50 +3,50 @@
     "media" : [
       {
         "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
+        "thumb": "media/thumb1.jpg",
+        "url": "media/large1.jpg",
+        "caption": "caption goes here"
+      },
+       {
+        "type": "image",
+        "thumb": "media/thumb6.jpg",
+        "url": "media/large6.jpg",
         "caption": "caption goes here"
       },
       {
         "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
+        "thumb": "media/thumb2.jpg",
+        "url": "media/large2.jpg",
         "caption": "caption goes here"
       },
       {
         "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
-        "caption": "caption goes here"
-      },
-      {
-        "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
+        "thumb": "media/thumb5.jpg",
+        "url": "media/large5.jpg",
         "caption": "caption goes here"
       },
       {
         "type": "video",
-        "thumb": "images/test.jpg",
-        "url": "<iframe width='100%'' height='100%' src='https://www.youtube.com/embed/XUYu9rLjgws?autoplay=1&modestbranding=1&controls=0&showinfo=0&rel=0' frameborder='0' allowfullscreen></iframe>",
+        "thumb": "media/vine-thumb.jpg",
+        "url": "<iframe src='https://vine.co/v/OrmY7hXn3vQ/embed/simple' width='100%' height='100%' frameborder='0'></iframe><script src='https://platform.vine.co/static/scripts/embed.js'></script>",
         "caption": "caption goes here"
       },
       {
         "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
+        "thumb": "media/thumb3.jpg",
+        "url": "media/large3.jpg",
         "caption": "caption goes here"
       },
       {
         "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
+        "thumb": "media/thumb4.jpg",
+        "url": "media/large4.jpg",
         "caption": "caption goes here"
       },
       {
-        "type": "image",
-        "thumb": "images/test.jpg",
-        "url": "images/large.jpg",
+        "type": "video",
+        "thumb": "media/soundcloud-thumb.jpg",
+        "url": "<iframe width='100%' height='100%' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/178475272&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>",
         "caption": "caption goes here"
       }
     ]

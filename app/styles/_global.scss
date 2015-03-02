@@ -52,3 +52,7 @@ table {
 .pull-right {
   float: right;
 }
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
+}

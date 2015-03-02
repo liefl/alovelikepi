@@ -30,7 +30,7 @@ main {
     font-family: 'blanchcaps';
     font-size: 36px;
     letter-spacing: 5px;
-    color: #FFF;
+    color: #FFF !important;
     z-index: 100;
 
   }
@@ -61,8 +61,16 @@ main {
 
 }
 
-body.is-mobile main {
-  display: none;
+body.is-mobile {
+
+  main {
+    display: none;
+  }
+
+  .mobile-content {
+    display: block;
+  }
+  
 }
 
 // main svg content
@@ -73,6 +81,7 @@ body.is-mobile main {
   top: 50%; left: 50%;
   width: 3000px; height: 2000px;
   margin: -1000px 0 0 -1500px;
+  transform: translate3d(0,0,0);
 
   // clouds
 
@@ -220,6 +229,22 @@ body.is-mobile main {
 
     }
 
+  }
+
+}
+
+// cave 
+
+#jackandthegiantcavesvg {
+
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 3000px; height: 2000px;
+  margin: -1000px 0 0 -1500px;
+  pointer-events: none;
+
+  &.active {
+    pointer-events: all;
   }
 
 }

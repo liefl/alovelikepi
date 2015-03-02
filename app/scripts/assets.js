@@ -95,6 +95,7 @@ JATT.Assets = (function() {
 
     var dfd = new $.Deferred();
     var loaded = 0;
+    var fragments = {};
 
     for(var k in assets) {
       loadAsset(assets[k]);
@@ -105,9 +106,7 @@ JATT.Assets = (function() {
       Snap.load(asset.path, function(f) {
 
         var t = new Snap.Matrix().translate(asset.xPos, asset.yPos);
-        var g = f.select('g').transform(t);
-
-        JATT.elements[asset.name] = JATT.s.group().addClass(asset.name).append(g);
+        fragments[asset.name] = f.select('g').transform(t);
 
         if(++loaded === assets.length) {
           onAssetsLoaded();
@@ -119,27 +118,16 @@ JATT.Assets = (function() {
 
     function onAssetsLoaded() {
 
-      // controlling depth
+      var depths = ['stars', 'moon', 'cloud1', 'cloud2', 'cloud3', 'cloud4', 'cloud5', 'giant', 'cloud6', 'cloud7', 'mountains2', 'mountains', 'cliff'];
 
-      JATT.s.append(JATT.elements['stars']);
-      JATT.s.append(JATT.elements['moon']);
-      JATT.s.append(JATT.elements['cloud1']);
-      JATT.s.append(JATT.elements['cloud2']);
-      JATT.s.append(JATT.elements['cloud3']);
-      JATT.s.append(JATT.elements['cloud4']);
-      JATT.s.append(JATT.elements['cloud5']);
-      JATT.s.append(JATT.elements['giant']);
-      JATT.s.append(JATT.elements['cloud6']);
-      JATT.s.append(JATT.elements['cloud7']);
-      JATT.s.append(JATT.elements['mountains2']);
-      JATT.s.append(JATT.elements['mountains']);
-      JATT.s.append(JATT.elements['cliff']);
+      for(var i=0; i < depths.length; i++) {
+        JATT.elements[depths[i]] = JATT.s.group().addClass(depths[i]).append(fragments[depths[i]]);
+      }
 
       // adding child elements
 
-      JATT.elements['stars'].append(JATT.elements['map']);
-      JATT.elements['cliff'].append(JATT.elements['jack']);
-
+      JATT.elements['map'] = JATT.elements['stars'].group().addClass('map').append(fragments['map']);
+      JATT.elements['jack'] = JATT.elements['cliff'].group().addClass('jack').append(fragments['jack']);
 
       // return success
 

@@ -12,9 +12,13 @@ JATT.News = (function() {
       d: 'M0,326.4 32.2,287.2 40.9,64.4 648.1,40 689,53.1 702,40 735.1,49.6 740.3,69.6 766.4,78.3 776,581.3 756,598.7 41.8,579.6 19.1,548.2 31.3,319.4 0,326.4'
     }, 1000, function (t) { return t<.5 ? 16*t*t*t*t*t : 1+16*(--t)*t*t*t*t });
 
-    
-    $('#dialogueShakeAnimation')[0].endElement();
 
+    try {
+      $('#dialogueShakeAnimation')[0].endElement();
+    } catch (e) {
+      //
+    }
+    
     $.get('data/news.html', function(response) {
       $('#news-viewer').html(response);
     });
@@ -30,26 +34,16 @@ JATT.News = (function() {
     }, 600, function (t) { return t<.5 ? 16*t*t*t*t*t : 1+16*(--t)*t*t*t*t });
 
     setTimeout(function() {
-      $('#dialogueShakeAnimation')[0].beginElement();
+
+      try {
+        $('#dialogueShakeAnimation')[0].beginElement();
+      } catch (e) {
+        //
+      }
+
+      $('#news-viewer').html('');
+      
     }, 500);
-
-  };
-
-  var start = function() {
-
-    // JATT.elements['cliff'].select('.dialogue-shape').animate({
-    //   transform: 'rotate(200 -13 336)'
-    // }, 5000, null, ender);
-
-    // function ender() {
-    //   console.log('ended')
-    // }
-
-
-
-  };
-
-  var stop = function() {
 
   };
 

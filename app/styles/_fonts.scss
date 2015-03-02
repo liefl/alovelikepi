@@ -23,11 +23,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:url('../fonts/icomoon.eot?-dtxhzy');
-  src:url('../fonts/icomoon.eot?#iefix-dtxhzy') format('embedded-opentype'),
-    url('../fonts/icomoon.woff?-dtxhzy') format('woff'),
-    url('../fonts/icomoon.ttf?-dtxhzy') format('truetype'),
-    url('../fonts/icomoon.svg?-dtxhzy#icomoon') format('svg');
+  src:url('../fonts/icomoon.eot?pcc117');
+  src:url('../fonts/icomoon.eot?#iefixpcc117') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?pcc117') format('woff'),
+    url('../fonts/icomoon.ttf?pcc117') format('truetype'),
+    url('../fonts/icomoon.svg?pcc117#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,4 +80,8 @@
 
 .icon-facebook:before {
   content: "\e605";
+}
+
+.icon-mic:before {
+  content: "\e609";
 }
